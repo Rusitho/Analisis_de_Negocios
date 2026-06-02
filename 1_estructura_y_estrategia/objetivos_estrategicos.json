@@ -1,0 +1,265 @@
+{
+  "framework": "OKR",
+  "ciclo": "Anual 2026",
+  "fecha_actualizacion": "2026-06-02",
+  "version": "1.0",
+  "periodo": {
+    "inicio": "2026-01-01",
+    "fin": "2026-12-31",
+    "trimestres": ["Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026"]
+  },
+  "okrs_corporativos": [
+    {
+      "id": "OKR-C01",
+      "objetivo": "Incrementar los ingresos y rentabilidad del negocio",
+      "perspectiva_bsc": "Financiera",
+      "propietario": "CEO + CFO",
+      "prioridad": "Alta",
+      "key_results": [
+        {
+          "id": "OKR-C01-KR1",
+          "descripcion": "Alcanzar $15M USD en ingresos anuales",
+          "baseline_inicio": 10500000,
+          "meta": 15000000,
+          "unidad": "USD",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "revenue_total",
+          "progreso_q1": 3200000,
+          "progreso_q2": 3800000,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C01-KR2",
+          "descripcion": "Lograr EBITDA margin de al menos 22%",
+          "baseline_inicio": 17.5,
+          "meta": 22.0,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "ebitda_margin_pct",
+          "progreso_q2": 19.2,
+          "estado": "at_risk"
+        },
+        {
+          "id": "OKR-C01-KR3",
+          "descripcion": "Reducir CAC en 20% manteniendo volumen de adquisición",
+          "baseline_inicio": 10.0,
+          "meta": 8.0,
+          "unidad": "USD",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "cac",
+          "progreso_q2": 8.9,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C01-KR4",
+          "descripcion": "Incrementar LTV promedio a $140 USD",
+          "baseline_inicio": 110.0,
+          "meta": 140.0,
+          "unidad": "USD",
+          "frecuencia_medicion": "Trimestral",
+          "kpi_vinculado": "ltv_promedio",
+          "progreso_q2": 118.5,
+          "estado": "on_track"
+        }
+      ]
+    },
+    {
+      "id": "OKR-C02",
+      "objetivo": "Ser la plataforma de movilidad con mejor experiencia de usuario en el mercado",
+      "perspectiva_bsc": "Clientes",
+      "propietario": "CCO + CMO",
+      "prioridad": "Alta",
+      "key_results": [
+        {
+          "id": "OKR-C02-KR1",
+          "descripcion": "Alcanzar NPS de 72 o superior",
+          "baseline_inicio": 58,
+          "meta": 72,
+          "unidad": "puntos_nps",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "nps",
+          "progreso_q2": 64,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C02-KR2",
+          "descripcion": "Reducir churn mensual por debajo del 2.5%",
+          "baseline_inicio": 4.2,
+          "meta": 2.5,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "churn_rate_mensual",
+          "progreso_q2": 3.1,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C02-KR3",
+          "descripcion": "Resolver 90% de incidentes de clientes en menos de 4 horas",
+          "baseline_inicio": 67.0,
+          "meta": 90.0,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Semanal",
+          "kpi_vinculado": "incidentes_resueltos_4h_pct",
+          "progreso_q2": 78.5,
+          "estado": "at_risk"
+        },
+        {
+          "id": "OKR-C02-KR4",
+          "descripcion": "Alcanzar 500,000 usuarios activos mensuales",
+          "baseline_inicio": 320000,
+          "meta": 500000,
+          "unidad": "usuarios",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "usuarios_activos_mes",
+          "progreso_q2": 385000,
+          "estado": "on_track"
+        }
+      ]
+    },
+    {
+      "id": "OKR-C03",
+      "objetivo": "Optimizar la eficiencia operativa y calidad del servicio",
+      "perspectiva_bsc": "Procesos Internos",
+      "propietario": "COO + CTO",
+      "prioridad": "Alta",
+      "key_results": [
+        {
+          "id": "OKR-C03-KR1",
+          "descripcion": "Mantener uptime de plataforma en 99.9%",
+          "baseline_inicio": 98.5,
+          "meta": 99.9,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Diaria",
+          "kpi_vinculado": "uptime_plataforma_pct",
+          "progreso_q2": 99.4,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C03-KR2",
+          "descripcion": "Reducir costo operativo por viaje en 15%",
+          "baseline_inicio": 1.85,
+          "meta": 1.57,
+          "unidad": "USD",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "costo_por_viaje",
+          "progreso_q2": 1.71,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C03-KR3",
+          "descripcion": "Lograr 95% de SLA cumplimiento en todos los contratos",
+          "baseline_inicio": 87.0,
+          "meta": 95.0,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Semanal",
+          "kpi_vinculado": "sla_cumplimiento_pct",
+          "progreso_q2": 91.2,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C03-KR4",
+          "descripcion": "Automatizar 30 procesos manuales recurrentes",
+          "baseline_inicio": 0,
+          "meta": 30,
+          "unidad": "procesos",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "procesos_automatizados_acumulado",
+          "progreso_q2": 14,
+          "estado": "on_track"
+        }
+      ]
+    },
+    {
+      "id": "OKR-C04",
+      "objetivo": "Reducir riesgos y fortalecer el gobierno corporativo",
+      "perspectiva_bsc": "Procesos Internos",
+      "propietario": "CRO + CISO",
+      "prioridad": "Media-Alta",
+      "key_results": [
+        {
+          "id": "OKR-C04-KR1",
+          "descripcion": "Cero riesgos críticos sin plan de mitigación activo",
+          "baseline_inicio": 3,
+          "meta": 0,
+          "unidad": "cantidad",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "riesgos_criticos_sin_mitigacion",
+          "progreso_q2": 1,
+          "estado": "at_risk"
+        },
+        {
+          "id": "OKR-C04-KR2",
+          "descripcion": "Completar 100% de auditorías planificadas en el año",
+          "baseline_inicio": 0,
+          "meta": 12,
+          "unidad": "auditorias",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "auditorias_completadas",
+          "progreso_q2": 6,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C04-KR3",
+          "descripcion": "Obtener certificación ISO 27001 en Q3 2026",
+          "baseline_inicio": 0,
+          "meta": 1,
+          "unidad": "certificacion",
+          "frecuencia_medicion": "Trimestral",
+          "kpi_vinculado": "certificacion_iso27001",
+          "progreso_q2": 0,
+          "estado": "on_track",
+          "nota": "En proceso, auditoría pre-certificación en Q3"
+        }
+      ]
+    },
+    {
+      "id": "OKR-C05",
+      "objetivo": "Construir capacidades de datos, analítica e IA como ventaja competitiva",
+      "perspectiva_bsc": "Aprendizaje y Crecimiento",
+      "propietario": "CDO + CTO",
+      "prioridad": "Media",
+      "key_results": [
+        {
+          "id": "OKR-C05-KR1",
+          "descripcion": "Tener 5 modelos de ML en producción generando valor",
+          "baseline_inicio": 0,
+          "meta": 5,
+          "unidad": "modelos",
+          "frecuencia_medicion": "Trimestral",
+          "kpi_vinculado": "modelos_ml_en_produccion",
+          "progreso_q2": 2,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C05-KR2",
+          "descripcion": "Alcanzar 85% de datos catalogados con linaje completo",
+          "baseline_inicio": 20.0,
+          "meta": 85.0,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Mensual",
+          "kpi_vinculado": "datos_catalogados_pct",
+          "progreso_q2": 52.0,
+          "estado": "on_track"
+        },
+        {
+          "id": "OKR-C05-KR3",
+          "descripcion": "Lograr que el 100% del C-suite use datos para decisiones diarias",
+          "baseline_inicio": 30.0,
+          "meta": 100.0,
+          "unidad": "porcentaje",
+          "frecuencia_medicion": "Trimestral",
+          "kpi_vinculado": "data_driven_decisions_pct",
+          "progreso_q2": 75.0,
+          "estado": "on_track"
+        }
+      ]
+    }
+  ],
+  "estados_posibles": {
+    "on_track": "En camino — progreso alineado con el plan",
+    "at_risk": "En riesgo — requiere acción correctiva",
+    "off_track": "Desviado — requiere plan de recuperación urgente",
+    "completed": "Completado — meta alcanzada",
+    "paused": "Pausado — prioridades cambiaron temporalmente"
+  }
+}

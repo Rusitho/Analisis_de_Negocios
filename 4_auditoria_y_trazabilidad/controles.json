@@ -1,0 +1,148 @@
+{
+  "version": "1.0",
+  "fecha_actualizacion": "2026-06-02",
+  "propietario": "CRO + CISO",
+  "controles": [
+    {
+      "id": "CTRL-001",
+      "nombre": "Control de Acceso Basado en Roles (RBAC)",
+      "tipo": "Preventivo",
+      "categoria": "Seguridad de la Información",
+      "descripcion": "Gestión de permisos por rol, garantizando que cada usuario accede solo a los recursos necesarios para su función",
+      "riesgos_mitigados": ["RSK-001"],
+      "responsable": "CISO",
+      "frecuencia_revision": "Trimestral",
+      "automatizado": true,
+      "evidencia_requerida": "Reporte de accesos activos por rol",
+      "estado": "Implementado",
+      "efectividad": "Alta"
+    },
+    {
+      "id": "CTRL-002",
+      "nombre": "Monitoreo de Seguridad SIEM",
+      "tipo": "Detectivo",
+      "categoria": "Ciberseguridad",
+      "descripcion": "Sistema centralizado de gestión de eventos e información de seguridad que detecta anomalías y alertas en tiempo real",
+      "riesgos_mitigados": ["RSK-001"],
+      "responsable": "CISO",
+      "frecuencia_revision": "Diaria",
+      "automatizado": true,
+      "evidencia_requerida": "Dashboard de alertas SIEM + log de incidentes",
+      "estado": "En implementación",
+      "efectividad": "Alta"
+    },
+    {
+      "id": "CTRL-003",
+      "nombre": "Backups Automatizados con Prueba de Restauración",
+      "tipo": "Correctivo",
+      "categoria": "Continuidad de Negocio",
+      "descripcion": "Proceso automatizado de backup diario con retención de 30 días y prueba mensual de restauración",
+      "riesgos_mitigados": ["RSK-001", "RSK-007"],
+      "responsable": "CTO",
+      "frecuencia_revision": "Mensual (prueba de restauración)",
+      "automatizado": true,
+      "evidencia_requerida": "Log de backups exitosos + acta de prueba de restauración",
+      "estado": "Implementado",
+      "efectividad": "Alta"
+    },
+    {
+      "id": "CTRL-004",
+      "nombre": "Programa de Mantenimiento Preventivo de Flota",
+      "tipo": "Preventivo",
+      "categoria": "Operaciones",
+      "descripcion": "Cronograma de mantenimiento preventivo por kilómetros y tiempo para cada vehículo de la flota",
+      "riesgos_mitigados": ["RSK-002"],
+      "responsable": "COO",
+      "frecuencia_revision": "Mensual",
+      "automatizado": false,
+      "evidencia_requerida": "Registro de mantenimiento por vehículo + tasa de disponibilidad de flota",
+      "estado": "Implementado",
+      "efectividad": "Media"
+    },
+    {
+      "id": "CTRL-005",
+      "nombre": "Revisiones QBR con Cuentas Corporativas",
+      "tipo": "Preventivo",
+      "categoria": "Gestión Comercial",
+      "descripcion": "Reuniones trimestrales de revisión de negocio con cada cuenta B2B mayor para gestionar satisfacción y renovación",
+      "riesgos_mitigados": ["RSK-003"],
+      "responsable": "CMO + CCO",
+      "frecuencia_revision": "Trimestral",
+      "automatizado": false,
+      "evidencia_requerida": "Actas de reunión QBR + NPS corporativo",
+      "estado": "En implementación",
+      "efectividad": "Media"
+    },
+    {
+      "id": "CTRL-006",
+      "nombre": "Monitoreo de Agenda Regulatoria",
+      "tipo": "Detectivo",
+      "categoria": "Cumplimiento",
+      "descripcion": "Seguimiento continuo de cambios normativos en cada ciudad de operación con alertas al CRO",
+      "riesgos_mitigados": ["RSK-004"],
+      "responsable": "CRO",
+      "frecuencia_revision": "Mensual",
+      "automatizado": false,
+      "evidencia_requerida": "Reporte mensual de novedades regulatorias",
+      "estado": "Implementado",
+      "efectividad": "Media"
+    },
+    {
+      "id": "CTRL-007",
+      "nombre": "Sistema de Detección de Fraude por ML",
+      "tipo": "Detectivo",
+      "categoria": "Fraude",
+      "descripcion": "Modelo de machine learning que detecta patrones de comportamiento anómalo en transacciones y viajes",
+      "riesgos_mitigados": ["RSK-006"],
+      "responsable": "CDO + CRO",
+      "frecuencia_revision": "Semanal (métricas del modelo)",
+      "automatizado": true,
+      "evidencia_requerida": "Dashboard de alertas de fraude + tasa de falsos positivos",
+      "estado": "En desarrollo",
+      "efectividad": "Alta (proyectado)"
+    },
+    {
+      "id": "CTRL-008",
+      "nombre": "Canal de Denuncias Anónimas (Whistleblower)",
+      "tipo": "Detectivo",
+      "categoria": "Gobierno Corporativo",
+      "descripcion": "Canal seguro y anónimo para que empleados y conductores reporten conductas inapropiadas, fraude o violaciones de política",
+      "riesgos_mitigados": ["RSK-006"],
+      "responsable": "CRO + RRHH",
+      "frecuencia_revision": "Mensual",
+      "automatizado": false,
+      "evidencia_requerida": "Registro de denuncias y estado de investigación",
+      "estado": "Implementado",
+      "efectividad": "Media"
+    },
+    {
+      "id": "CTRL-009",
+      "nombre": "Arquitectura Multi-Región con Failover Automático",
+      "tipo": "Preventivo + Correctivo",
+      "categoria": "Disponibilidad",
+      "descripcion": "Despliegue de servicios críticos en múltiples regiones cloud con failover automático ante falla",
+      "riesgos_mitigados": ["RSK-007"],
+      "responsable": "CTO",
+      "frecuencia_revision": "Semestral (prueba de failover)",
+      "automatizado": true,
+      "evidencia_requerida": "Resultado de prueba de failover + uptime dashboard",
+      "estado": "En implementación",
+      "efectividad": "Alta (proyectado)"
+    }
+  ],
+  "resumen": {
+    "total_controles": 9,
+    "por_tipo": {
+      "preventivo": 4,
+      "detectivo": 4,
+      "correctivo": 1
+    },
+    "por_estado": {
+      "implementado": 5,
+      "en_implementacion": 3,
+      "en_desarrollo": 1
+    },
+    "automatizados": 5,
+    "manuales": 4
+  }
+}

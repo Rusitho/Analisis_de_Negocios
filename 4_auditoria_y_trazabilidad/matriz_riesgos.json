@@ -1,0 +1,235 @@
+{
+  "version": "1.0",
+  "fecha_actualizacion": "2026-06-02",
+  "propietario": "CRO",
+  "proxima_revision": "2026-09-02",
+  "escala_probabilidad": {
+    "1": "Raro (< 1 vez en 10 años)",
+    "2": "Improbable (1 vez en 5-10 años)",
+    "3": "Posible (1 vez en 2-5 años)",
+    "4": "Probable (1 vez por año)",
+    "5": "Casi Cierto (múltiples veces al año)"
+  },
+  "escala_impacto": {
+    "1": "Insignificante (< $10K)",
+    "2": "Menor ($10K-$100K)",
+    "3": "Moderado ($100K-$1M)",
+    "4": "Mayor ($1M-$10M)",
+    "5": "Catastrófico (> $10M)"
+  },
+  "niveles_riesgo": {
+    "1-4": "Bajo — Aceptar y monitorear",
+    "5-9": "Medio — Mitigar y monitorear mensualmente",
+    "10-16": "Alto — Mitigar urgente y reportar al Comité",
+    "17-25": "Crítico — Escalada inmediata al CEO/Directorio"
+  },
+  "riesgos": [
+    {
+      "id": "RSK-001",
+      "categoria": "Tecnológico",
+      "nombre": "Ciberataque o ransomware a infraestructura crítica",
+      "descripcion": "Ataque que comprometa la disponibilidad o integridad de sistemas operativos, datos de clientes o plataforma de pagos",
+      "probabilidad": 3,
+      "impacto": 5,
+      "nivel_riesgo": 15,
+      "nivel_label": "Alto",
+      "estado": "activo",
+      "fecha_identificacion": "2026-01-15",
+      "propietario": "CISO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Implementar EDR en todos los endpoints",
+          "Segmentación de red y Zero Trust Architecture",
+          "Backups offline diarios con prueba de restauración",
+          "Plan de respuesta a incidentes cibernéticos actualizado",
+          "Formación anti-phishing trimestral"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-09-30",
+        "riesgo_residual": 6,
+        "nivel_residual": "Medio"
+      },
+      "controles_asociados": ["CTRL-001", "CTRL-002", "CTRL-003"],
+      "kpis_impactados": ["uptime_plataforma_pct", "revenue_total_usd", "nps"]
+    },
+    {
+      "id": "RSK-002",
+      "categoria": "Operacional",
+      "nombre": "Falla masiva de flota por problema mecánico o de mantenimiento",
+      "descripcion": "Inmovilización simultánea de más del 30% de la flota por falla técnica, impactando el servicio",
+      "probabilidad": 2,
+      "impacto": 4,
+      "nivel_riesgo": 8,
+      "nivel_label": "Medio",
+      "estado": "activo",
+      "fecha_identificacion": "2026-01-15",
+      "propietario": "COO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Programa de mantenimiento preventivo mensual",
+          "Implementar sensores IoT para mantenimiento predictivo",
+          "Acuerdo con proveedor de vehículos de respaldo",
+          "Inspección técnica semestral certificada"
+        ],
+        "estado_mitigacion": "Completado",
+        "fecha_limite": "2026-06-30",
+        "riesgo_residual": 4,
+        "nivel_residual": "Bajo"
+      },
+      "controles_asociados": ["CTRL-004"],
+      "kpis_impactados": ["sla_cumplimiento_pct", "csat", "nps"]
+    },
+    {
+      "id": "RSK-003",
+      "categoria": "Financiero",
+      "nombre": "Pérdida de contratos corporativos clave (> 20% del revenue)",
+      "descripcion": "No renovación o cancelación anticipada de contratos B2B que representen más del 20% de los ingresos",
+      "probabilidad": 2,
+      "impacto": 4,
+      "nivel_riesgo": 8,
+      "nivel_label": "Medio",
+      "estado": "activo",
+      "fecha_identificacion": "2026-02-01",
+      "propietario": "CMO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Programa de Customer Success dedicado a cuentas enterprise",
+          "Revisiones QBR (Quarterly Business Review) con cada cuenta mayor",
+          "Diversificación del portafolio B2B (ningún cliente > 10% del revenue)",
+          "Contratos con cláusulas de penalización por cancelación anticipada"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-08-31",
+        "riesgo_residual": 4,
+        "nivel_residual": "Bajo"
+      },
+      "controles_asociados": ["CTRL-005"],
+      "kpis_impactados": ["revenue_total_usd", "ebitda_pct", "churn_rate_mensual"]
+    },
+    {
+      "id": "RSK-004",
+      "categoria": "Regulatorio",
+      "nombre": "Cambio regulatorio que restrinja operación de plataformas de movilidad",
+      "descripcion": "Modificación de leyes o reglamentos locales que impongan restricciones operativas, licencias adicionales o prohibiciones",
+      "probabilidad": 3,
+      "impacto": 4,
+      "nivel_riesgo": 12,
+      "nivel_label": "Alto",
+      "estado": "activo",
+      "fecha_identificacion": "2026-01-15",
+      "propietario": "CRO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Monitoreo continuo de agenda legislativa en cada ciudad de operación",
+          "Relación activa con gremios de transporte y autoridades municipales",
+          "Equipo legal especializado en regulación de movilidad",
+          "Plan de contingencia operativa para restricciones parciales"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-12-31",
+        "riesgo_residual": 8,
+        "nivel_residual": "Medio"
+      },
+      "controles_asociados": ["CTRL-006"],
+      "kpis_impactados": ["revenue_total_usd", "usuarios_activos_mensuales"]
+    },
+    {
+      "id": "RSK-005",
+      "categoria": "Estratégico",
+      "nombre": "Entrada de competidor global con capital masivo (Uber, Lyft, etc.)",
+      "descripcion": "Ingreso al mercado local de un operador internacional con capacidad de subsidiación masiva y destrucción de precios",
+      "probabilidad": 3,
+      "impacto": 4,
+      "nivel_riesgo": 12,
+      "nivel_label": "Alto",
+      "estado": "activo",
+      "fecha_identificacion": "2026-01-15",
+      "propietario": "CEO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Fortalecer el programa de lealtad antes de posible entrada competidora",
+          "Asegurar contratos exclusivos con municipios clave",
+          "Construir ventajas de datos y algoritmo propietario",
+          "Velocidad de expansión geográfica para establecer posición dominante"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-12-31",
+        "riesgo_residual": 9,
+        "nivel_residual": "Medio"
+      },
+      "controles_asociados": [],
+      "kpis_impactados": ["usuarios_activos_mensuales", "nps", "churn_rate_mensual", "cac_usd"]
+    },
+    {
+      "id": "RSK-006",
+      "categoria": "Operacional",
+      "nombre": "Fraude interno por parte de conductores o empleados",
+      "descripcion": "Manipulación de viajes, cobros fraudulentos, o robo de datos de clientes por actores internos",
+      "probabilidad": 4,
+      "impacto": 3,
+      "nivel_riesgo": 12,
+      "nivel_label": "Alto",
+      "estado": "activo",
+      "fecha_identificacion": "2026-02-15",
+      "propietario": "CRO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Sistema de detección de anomalías en tiempo real (ML)",
+          "Revisión de antecedentes en proceso de onboarding de conductores",
+          "Auditorías aleatorias de transacciones",
+          "Canal de denuncia anónima (whistleblower)",
+          "Separación de funciones en accesos a datos sensibles"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-07-31",
+        "riesgo_residual": 6,
+        "nivel_residual": "Medio"
+      },
+      "controles_asociados": ["CTRL-007", "CTRL-008"],
+      "kpis_impactados": ["revenue_total_usd", "nps", "margen_bruto_pct"]
+    },
+    {
+      "id": "RSK-007",
+      "categoria": "Tecnológico",
+      "nombre": "Falla crítica de proveedor de infraestructura cloud",
+      "descripcion": "Interrupción del proveedor cloud principal (AWS/Azure/GCP) que deje la plataforma indisponible por más de 4 horas",
+      "probabilidad": 2,
+      "impacto": 4,
+      "nivel_riesgo": 8,
+      "nivel_label": "Medio",
+      "estado": "activo",
+      "fecha_identificacion": "2026-01-15",
+      "propietario": "CTO",
+      "plan_mitigacion": {
+        "acciones": [
+          "Arquitectura multi-región activo-activo para servicios críticos",
+          "Proveedor cloud secundario para failover de emergencia",
+          "SLA contractual con el proveedor cloud con penalizaciones",
+          "Pruebas de recuperación ante desastre semestrales"
+        ],
+        "estado_mitigacion": "En progreso",
+        "fecha_limite": "2026-10-31",
+        "riesgo_residual": 4,
+        "nivel_residual": "Bajo"
+      },
+      "controles_asociados": ["CTRL-009"],
+      "kpis_impactados": ["uptime_plataforma_pct", "sla_cumplimiento_pct"]
+    }
+  ],
+  "resumen": {
+    "total_riesgos": 7,
+    "por_nivel": {
+      "critico": 0,
+      "alto": 4,
+      "medio": 3,
+      "bajo": 0
+    },
+    "por_categoria": {
+      "tecnologico": 2,
+      "operacional": 2,
+      "financiero": 1,
+      "regulatorio": 1,
+      "estrategico": 1
+    }
+  }
+}

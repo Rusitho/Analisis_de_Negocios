@@ -1,0 +1,209 @@
+{
+  "generado_en": "2026-06-02T22:40:53.568912",
+  "total_kpis": 18,
+  "resumen": {
+    "verde": 6,
+    "amarillo": 9,
+    "rojo": 3
+  },
+  "kpis": [
+    {
+      "nombre": "visitas_mensuales",
+      "area": "Web",
+      "valor": 45444,
+      "meta": 60000,
+      "unidad": "sesiones",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -24.26,
+      "alerta": "⚠️ Tráfico web bajo el umbral — revisar campañas y SEO",
+      "timestamp": "2026-06-02T22:40:53.567121"
+    },
+    {
+      "nombre": "tasa_conversion_web",
+      "area": "Web",
+      "valor": 3.9,
+      "meta": 4.0,
+      "unidad": "%",
+      "semaforo": "VERDE",
+      "desviacion_pct": -2.5,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567196"
+    },
+    {
+      "nombre": "bounce_rate",
+      "area": "Web",
+      "valor": 40.8,
+      "meta": 32,
+      "unidad": "%",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": 27.5,
+      "alerta": "⚠️ Bounce rate elevado — revisar experiencia y relevancia del contenido",
+      "timestamp": "2026-06-02T22:40:53.567205"
+    },
+    {
+      "nombre": "leads_generados",
+      "area": "Web",
+      "valor": 2595,
+      "meta": 2500,
+      "unidad": "leads",
+      "semaforo": "VERDE",
+      "desviacion_pct": 3.8,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567211"
+    },
+    {
+      "nombre": "sla_cumplimiento_pct",
+      "area": "Ops",
+      "valor": 90.4,
+      "meta": 96,
+      "unidad": "%",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -5.83,
+      "alerta": "🔴 SLA comprometido — revisar operaciones y capacidad",
+      "timestamp": "2026-06-02T22:40:53.567218"
+    },
+    {
+      "nombre": "tiempo_resolucion_h",
+      "area": "Ops",
+      "valor": 4.7,
+      "meta": 3.0,
+      "unidad": "horas",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": 56.67,
+      "alerta": "⚠️ Tiempo de resolución fuera de SLA — reforzar equipo de CS",
+      "timestamp": "2026-06-02T22:40:53.567224"
+    },
+    {
+      "nombre": "uptime_plataforma_pct",
+      "area": "Tech",
+      "valor": 99.07,
+      "meta": 99.9,
+      "unidad": "%",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -0.83,
+      "alerta": "🔴 Disponibilidad de plataforma comprometida — escalada a CTO",
+      "timestamp": "2026-06-02T22:40:53.567229"
+    },
+    {
+      "nombre": "costo_por_viaje_usd",
+      "area": "Ops",
+      "valor": 1.97,
+      "meta": 1.57,
+      "unidad": "USD",
+      "semaforo": "ROJO",
+      "desviacion_pct": 25.48,
+      "alerta": "⚠️ Costo por viaje elevado — revisar eficiencia operativa",
+      "timestamp": "2026-06-02T22:40:53.567241"
+    },
+    {
+      "nombre": "nps",
+      "area": "CX",
+      "valor": 70,
+      "meta": 72,
+      "unidad": "puntos",
+      "semaforo": "VERDE",
+      "desviacion_pct": -2.78,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567247"
+    },
+    {
+      "nombre": "csat",
+      "area": "CX",
+      "valor": 72.9,
+      "meta": 92,
+      "unidad": "%",
+      "semaforo": "ROJO",
+      "desviacion_pct": -20.76,
+      "alerta": "⚠️ Satisfacción del cliente baja — análisis de puntos de dolor",
+      "timestamp": "2026-06-02T22:40:53.567253"
+    },
+    {
+      "nombre": "churn_rate_mensual",
+      "area": "CX",
+      "valor": 2.43,
+      "meta": 2.2,
+      "unidad": "%",
+      "semaforo": "VERDE",
+      "desviacion_pct": 10.45,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567258"
+    },
+    {
+      "nombre": "usuarios_activos_mensuales",
+      "area": "CX",
+      "valor": 338193,
+      "meta": 500000,
+      "unidad": "usuarios",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -32.36,
+      "alerta": "⚠️ MAU por debajo del objetivo — revisar activación y retención",
+      "timestamp": "2026-06-02T22:40:53.567263"
+    },
+    {
+      "nombre": "revenue_total_usd",
+      "area": "Fin",
+      "valor": 1112713,
+      "meta": 1250000,
+      "unidad": "USD",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -10.98,
+      "alerta": "🔴 Revenue bajo el objetivo — revisar pipeline comercial",
+      "timestamp": "2026-06-02T22:40:53.567267"
+    },
+    {
+      "nombre": "cac_usd",
+      "area": "Fin",
+      "valor": 8.35,
+      "meta": 7.5,
+      "unidad": "USD",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": 11.33,
+      "alerta": "⚠️ CAC elevado — optimizar canales de adquisición",
+      "timestamp": "2026-06-02T22:40:53.567271"
+    },
+    {
+      "nombre": "ltv_promedio_usd",
+      "area": "Fin",
+      "valor": 133.9,
+      "meta": 140,
+      "unidad": "USD",
+      "semaforo": "VERDE",
+      "desviacion_pct": -4.36,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567276"
+    },
+    {
+      "nombre": "ebitda_pct",
+      "area": "Fin",
+      "valor": 10.6,
+      "meta": 22,
+      "unidad": "%",
+      "semaforo": "ROJO",
+      "desviacion_pct": -51.82,
+      "alerta": "🔴 EBITDA bajo objetivo — revisar estructura de costos",
+      "timestamp": "2026-06-02T22:40:53.567280"
+    },
+    {
+      "nombre": "roi_pct",
+      "area": "Fin",
+      "valor": 21.4,
+      "meta": 28,
+      "unidad": "%",
+      "semaforo": "AMARILLO",
+      "desviacion_pct": -23.57,
+      "alerta": "⚠️ ROI insuficiente — revisar eficiencia de inversiones",
+      "timestamp": "2026-06-02T22:40:53.567284"
+    },
+    {
+      "nombre": "margen_bruto_pct",
+      "area": "Fin",
+      "valor": 45.0,
+      "meta": 48,
+      "unidad": "%",
+      "semaforo": "VERDE",
+      "desviacion_pct": -6.25,
+      "alerta": null,
+      "timestamp": "2026-06-02T22:40:53.567288"
+    }
+  ]
+}

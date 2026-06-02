@@ -1,0 +1,965 @@
+{
+  "generado_en": "2026-06-02T22:41:02.380977",
+  "datos_historicos_registros": 4320,
+  "patrones_demanda": {
+    "por_zona": {
+      "Centro": {
+        "promedio_diario": 329.7,
+        "maximo": 610,
+        "minimo": 153
+      },
+      "Norte": {
+        "promedio_diario": 219.1,
+        "maximo": 412,
+        "minimo": 108
+      },
+      "Sur": {
+        "promedio_diario": 174.8,
+        "maximo": 321,
+        "minimo": 76
+      },
+      "Este": {
+        "promedio_diario": 196.0,
+        "maximo": 368,
+        "minimo": 91
+      },
+      "Oeste": {
+        "promedio_diario": 241.1,
+        "maximo": 443,
+        "minimo": 114
+      },
+      "Aeropuerto": {
+        "promedio_diario": 87.5,
+        "maximo": 156,
+        "minimo": 39
+      }
+    },
+    "por_franja_horaria": {
+      "06-08": {
+        "promedio": 214.3,
+        "maximo": 436
+      },
+      "08-10": {
+        "promedio": 296.8,
+        "maximo": 610
+      },
+      "10-12": {
+        "promedio": 180.8,
+        "maximo": 360
+      },
+      "12-14": {
+        "promedio": 198.1,
+        "maximo": 423
+      },
+      "14-16": {
+        "promedio": 148.3,
+        "maximo": 290
+      },
+      "16-18": {
+        "promedio": 180.2,
+        "maximo": 358
+      },
+      "18-20": {
+        "promedio": 280.2,
+        "maximo": 568
+      },
+      "20-22": {
+        "promedio": 165.6,
+        "maximo": 334
+      }
+    },
+    "por_dia_semana": {
+      "Jue": {
+        "promedio": 220.2
+      },
+      "Vie": {
+        "promedio": 239.5
+      },
+      "Sáb": {
+        "promedio": 183.8
+      },
+      "Dom": {
+        "promedio": 151.9
+      },
+      "Lun": {
+        "promedio": 218.0
+      },
+      "Mar": {
+        "promedio": 216.7
+      },
+      "Mié": {
+        "promedio": 227.5
+      }
+    }
+  },
+  "forecast_por_zona": {
+    "Centro": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 2799.5,
+        "conductores_recomendados": 3499,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 2810.7,
+        "conductores_recomendados": 3513,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 2827.6,
+        "conductores_recomendados": 3534,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 2850.3,
+        "conductores_recomendados": 3562,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 2878.9,
+        "conductores_recomendados": 3598,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 2913.6,
+        "conductores_recomendados": 3642,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 2954.6,
+        "conductores_recomendados": 3693,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 3002.2,
+        "conductores_recomendados": 3752,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 3056.7,
+        "conductores_recomendados": 3820,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 3118.4,
+        "conductores_recomendados": 3898,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 3187.7,
+        "conductores_recomendados": 3984,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 3265.0,
+        "conductores_recomendados": 4081,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 3351.0,
+        "conductores_recomendados": 4188,
+        "zona": "Centro"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 3446.0,
+        "conductores_recomendados": 4307,
+        "zona": "Centro"
+      }
+    ],
+    "Sur": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 1472.2,
+        "conductores_recomendados": 1840,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 1478.1,
+        "conductores_recomendados": 1847,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 1487.0,
+        "conductores_recomendados": 1858,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 1498.9,
+        "conductores_recomendados": 1873,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 1514.0,
+        "conductores_recomendados": 1892,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 1532.2,
+        "conductores_recomendados": 1915,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 1553.8,
+        "conductores_recomendados": 1942,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 1578.8,
+        "conductores_recomendados": 1973,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 1607.5,
+        "conductores_recomendados": 2009,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 1639.9,
+        "conductores_recomendados": 2049,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 1676.4,
+        "conductores_recomendados": 2095,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 1717.0,
+        "conductores_recomendados": 2146,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 1762.2,
+        "conductores_recomendados": 2202,
+        "zona": "Sur"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 1812.2,
+        "conductores_recomendados": 2265,
+        "zona": "Sur"
+      }
+    ],
+    "Norte": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 1861.6,
+        "conductores_recomendados": 2327,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 1869.1,
+        "conductores_recomendados": 2336,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 1880.3,
+        "conductores_recomendados": 2350,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 1895.4,
+        "conductores_recomendados": 2369,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 1914.4,
+        "conductores_recomendados": 2393,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 1937.5,
+        "conductores_recomendados": 2421,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 1964.8,
+        "conductores_recomendados": 2456,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 1996.4,
+        "conductores_recomendados": 2495,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 2032.7,
+        "conductores_recomendados": 2540,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 2073.7,
+        "conductores_recomendados": 2592,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 2119.8,
+        "conductores_recomendados": 2649,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 2171.2,
+        "conductores_recomendados": 2714,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 2228.3,
+        "conductores_recomendados": 2785,
+        "zona": "Norte"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 2291.6,
+        "conductores_recomendados": 2864,
+        "zona": "Norte"
+      }
+    ],
+    "Aeropuerto": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 746.4,
+        "conductores_recomendados": 933,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 749.4,
+        "conductores_recomendados": 936,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 753.9,
+        "conductores_recomendados": 942,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 760.0,
+        "conductores_recomendados": 950,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 767.6,
+        "conductores_recomendados": 959,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 776.9,
+        "conductores_recomendados": 971,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 787.8,
+        "conductores_recomendados": 984,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 800.5,
+        "conductores_recomendados": 1000,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 815.0,
+        "conductores_recomendados": 1018,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 831.5,
+        "conductores_recomendados": 1039,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 850.0,
+        "conductores_recomendados": 1062,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 870.6,
+        "conductores_recomendados": 1088,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 893.5,
+        "conductores_recomendados": 1116,
+        "zona": "Aeropuerto"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 918.8,
+        "conductores_recomendados": 1148,
+        "zona": "Aeropuerto"
+      }
+    ],
+    "Oeste": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 2031.2,
+        "conductores_recomendados": 2539,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 2039.3,
+        "conductores_recomendados": 2549,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 2051.6,
+        "conductores_recomendados": 2564,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 2068.0,
+        "conductores_recomendados": 2585,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 2088.8,
+        "conductores_recomendados": 2611,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 2114.0,
+        "conductores_recomendados": 2642,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 2143.7,
+        "conductores_recomendados": 2679,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 2178.3,
+        "conductores_recomendados": 2722,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 2217.8,
+        "conductores_recomendados": 2772,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 2262.6,
+        "conductores_recomendados": 2828,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 2312.9,
+        "conductores_recomendados": 2891,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 2369.0,
+        "conductores_recomendados": 2961,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 2431.3,
+        "conductores_recomendados": 3039,
+        "zona": "Oeste"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 2500.3,
+        "conductores_recomendados": 3125,
+        "zona": "Oeste"
+      }
+    ],
+    "Este": [
+      {
+        "fecha": "2026-04-01",
+        "viajes_forecast": 1653.4,
+        "conductores_recomendados": 2066,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-02",
+        "viajes_forecast": 1660.0,
+        "conductores_recomendados": 2075,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-03",
+        "viajes_forecast": 1670.0,
+        "conductores_recomendados": 2087,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-04",
+        "viajes_forecast": 1683.4,
+        "conductores_recomendados": 2104,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-05",
+        "viajes_forecast": 1700.3,
+        "conductores_recomendados": 2125,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-06",
+        "viajes_forecast": 1720.8,
+        "conductores_recomendados": 2151,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-07",
+        "viajes_forecast": 1745.0,
+        "conductores_recomendados": 2181,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-08",
+        "viajes_forecast": 1773.1,
+        "conductores_recomendados": 2216,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-09",
+        "viajes_forecast": 1805.3,
+        "conductores_recomendados": 2256,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-10",
+        "viajes_forecast": 1841.7,
+        "conductores_recomendados": 2302,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-11",
+        "viajes_forecast": 1882.7,
+        "conductores_recomendados": 2353,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-12",
+        "viajes_forecast": 1928.3,
+        "conductores_recomendados": 2410,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-13",
+        "viajes_forecast": 1979.1,
+        "conductores_recomendados": 2473,
+        "zona": "Este"
+      },
+      {
+        "fecha": "2026-04-14",
+        "viajes_forecast": 2035.2,
+        "conductores_recomendados": 2544,
+        "zona": "Este"
+      }
+    ]
+  },
+  "recomendaciones_flota": [
+    {
+      "fecha": "2026-04-01",
+      "zona": "Centro",
+      "viajes_forecast": 2799.5,
+      "conductores_recomendados": 3499,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-01",
+      "zona": "Sur",
+      "viajes_forecast": 1472.2,
+      "conductores_recomendados": 1840,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-01",
+      "zona": "Norte",
+      "viajes_forecast": 1861.6,
+      "conductores_recomendados": 2327,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-01",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 746.4,
+      "conductores_recomendados": 933,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-01",
+      "zona": "Oeste",
+      "viajes_forecast": 2031.2,
+      "conductores_recomendados": 2539,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-01",
+      "zona": "Este",
+      "viajes_forecast": 1653.4,
+      "conductores_recomendados": 2066,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Centro",
+      "viajes_forecast": 2810.7,
+      "conductores_recomendados": 3513,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Sur",
+      "viajes_forecast": 1478.1,
+      "conductores_recomendados": 1847,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Norte",
+      "viajes_forecast": 1869.1,
+      "conductores_recomendados": 2336,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 749.4,
+      "conductores_recomendados": 936,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Oeste",
+      "viajes_forecast": 2039.3,
+      "conductores_recomendados": 2549,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-02",
+      "zona": "Este",
+      "viajes_forecast": 1660.0,
+      "conductores_recomendados": 2075,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Centro",
+      "viajes_forecast": 2827.6,
+      "conductores_recomendados": 3534,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Sur",
+      "viajes_forecast": 1487.0,
+      "conductores_recomendados": 1858,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Norte",
+      "viajes_forecast": 1880.3,
+      "conductores_recomendados": 2350,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 753.9,
+      "conductores_recomendados": 942,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Oeste",
+      "viajes_forecast": 2051.6,
+      "conductores_recomendados": 2564,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-03",
+      "zona": "Este",
+      "viajes_forecast": 1670.0,
+      "conductores_recomendados": 2087,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Centro",
+      "viajes_forecast": 2850.3,
+      "conductores_recomendados": 3562,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Sur",
+      "viajes_forecast": 1498.9,
+      "conductores_recomendados": 1873,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Norte",
+      "viajes_forecast": 1895.4,
+      "conductores_recomendados": 2369,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 760.0,
+      "conductores_recomendados": 950,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Oeste",
+      "viajes_forecast": 2068.0,
+      "conductores_recomendados": 2585,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-04",
+      "zona": "Este",
+      "viajes_forecast": 1683.4,
+      "conductores_recomendados": 2104,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Centro",
+      "viajes_forecast": 2878.9,
+      "conductores_recomendados": 3598,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Sur",
+      "viajes_forecast": 1514.0,
+      "conductores_recomendados": 1892,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Norte",
+      "viajes_forecast": 1914.4,
+      "conductores_recomendados": 2393,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 767.6,
+      "conductores_recomendados": 959,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Oeste",
+      "viajes_forecast": 2088.8,
+      "conductores_recomendados": 2611,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-05",
+      "zona": "Este",
+      "viajes_forecast": 1700.3,
+      "conductores_recomendados": 2125,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Centro",
+      "viajes_forecast": 2913.6,
+      "conductores_recomendados": 3642,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Sur",
+      "viajes_forecast": 1532.2,
+      "conductores_recomendados": 1915,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Norte",
+      "viajes_forecast": 1937.5,
+      "conductores_recomendados": 2421,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 776.9,
+      "conductores_recomendados": 971,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Oeste",
+      "viajes_forecast": 2114.0,
+      "conductores_recomendados": 2642,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-06",
+      "zona": "Este",
+      "viajes_forecast": 1720.8,
+      "conductores_recomendados": 2151,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Centro",
+      "viajes_forecast": 2954.6,
+      "conductores_recomendados": 3693,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Sur",
+      "viajes_forecast": 1553.8,
+      "conductores_recomendados": 1942,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Norte",
+      "viajes_forecast": 1964.8,
+      "conductores_recomendados": 2456,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 787.8,
+      "conductores_recomendados": 984,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Oeste",
+      "viajes_forecast": 2143.7,
+      "conductores_recomendados": 2679,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-07",
+      "zona": "Este",
+      "viajes_forecast": 1745.0,
+      "conductores_recomendados": 2181,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Centro",
+      "viajes_forecast": 3002.2,
+      "conductores_recomendados": 3752,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Sur",
+      "viajes_forecast": 1578.8,
+      "conductores_recomendados": 1973,
+      "proporcion_demanda_pct": 13.9
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Norte",
+      "viajes_forecast": 1996.4,
+      "conductores_recomendados": 2495,
+      "proporcion_demanda_pct": 17.6
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Aeropuerto",
+      "viajes_forecast": 800.5,
+      "conductores_recomendados": 1000,
+      "proporcion_demanda_pct": 7.1
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Oeste",
+      "viajes_forecast": 2178.3,
+      "conductores_recomendados": 2722,
+      "proporcion_demanda_pct": 19.2
+    },
+    {
+      "fecha": "2026-04-08",
+      "zona": "Este",
+      "viajes_forecast": 1773.1,
+      "conductores_recomendados": 2216,
+      "proporcion_demanda_pct": 15.7
+    },
+    {
+      "fecha": "2026-04-09",
+      "zona": "Centro",
+      "viajes_forecast": 3056.7,
+      "conductores_recomendados": 3820,
+      "proporcion_demanda_pct": 26.5
+    },
+    {
+      "fecha": "2026-04-09",
+      "zona": "Sur",
+      "viajes_forecast": 1607.5,
+      "conductores_recomendados": 2009,
+      "proporcion_demanda_pct": 13.9
+    }
+  ]
+}

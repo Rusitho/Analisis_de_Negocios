@@ -1,0 +1,109 @@
+{
+  "version": "1.0",
+  "fecha_actualizacion": "2026-06-02",
+  "propietario": "CDO",
+  "descripcion": "Diccionario de datos del Data Lakehouse — definiciones canónicas de todas las entidades",
+  "entidades": [
+    {
+      "entidad": "users",
+      "descripcion": "Usuarios registrados en la plataforma",
+      "tabla_gold": "curated.dim_users",
+      "campos": [
+        {"nombre": "user_id", "tipo": "UUID", "nullable": false, "descripcion": "Identificador único del usuario (hash SHA-256 del email para privacidad)"},
+        {"nombre": "registration_date", "tipo": "DATE", "nullable": false, "descripcion": "Fecha de primer registro en la plataforma"},
+        {"nombre": "acquisition_channel", "tipo": "VARCHAR(50)", "nullable": true, "descripcion": "Canal de adquisición: organic, paid_search, referral, social, corporate"},
+        {"nombre": "city_id", "tipo": "INT", "nullable": false, "descripcion": "FK a dim_cities — ciudad principal del usuario"},
+        {"nombre": "segment", "tipo": "VARCHAR(30)", "nullable": true, "descripcion": "Segmento ML: power_user, regular, occasional, at_risk, churned"},
+        {"nombre": "ltv_predicted_usd", "tipo": "DECIMAL(10,2)", "nullable": true, "descripcion": "LTV predicho por modelo ML (actualizado semanalmente)"},
+        {"nombre": "nps_last_score", "tipo": "SMALLINT", "nullable": true, "descripcion": "Último score NPS registrado (0-10)"},
+        {"nombre": "is_active", "tipo": "BOOLEAN", "nullable": false, "descripcion": "True si el usuario tuvo actividad en los últimos 30 días"},
+        {"nombre": "is_pii_masked", "tipo": "BOOLEAN", "nullable": false, "descripcion": "True si los campos PII han sido enmascarados en esta tabla"},
+        {"nombre": "_updated_at", "tipo": "TIMESTAMP", "nullable": false, "descripcion": "Timestamp de última actualización del registro"}
+      ]
+    },
+    {
+      "entidad": "trips",
+      "descripcion": "Viajes completados en la plataforma",
+      "tabla_gold": "curated.fact_trips",
+      "campos": [
+        {"nombre": "trip_id", "tipo": "UUID", "nullable": false, "descripcion": "Identificador único del viaje"},
+        {"nombre": "user_id", "tipo": "UUID", "nullable": false, "descripcion": "FK a dim_users"},
+        {"nombre": "driver_id", "tipo": "UUID", "nullable": false, "descripcion": "FK a dim_drivers"},
+        {"nombre": "vehicle_id", "tipo": "UUID", "nullable": false, "descripcion": "FK a dim_vehicles"},
+        {"nombre": "city_id", "tipo": "INT", "nullable": false, "descripcion": "FK a dim_cities"},
+        {"nombre": "origin_zone_id", "tipo": "INT", "nullable": false, "descripcion": "FK a dim_zones — zona de origen"},
+        {"nombre": "destination_zone_id", "tipo": "INT", "nullable": false, "descripcion": "FK a dim_zones — zona de destino"},
+        {"nombre": "requested_at", "tipo": "TIMESTAMP", "nullable": false, "descripcion": "Timestamp de solicitud del viaje"},
+        {"nombre": "started_at", "tipo": "TIMESTAMP", "nullable": true, "descripcion": "Timestamp de inicio del viaje"},
+        {"nombre": "completed_at", "tipo": "TIMESTAMP", "nullable": true, "descripcion": "Timestamp de finalización"},
+        {"nombre": "status", "tipo": "VARCHAR(20)", "nullable": false, "descripcion": "completed | cancelled_user | cancelled_driver | no_show"},
+        {"nombre": "distance_km", "tipo": "DECIMAL(8,3)", "nullable": true, "descripcion": "Distancia del viaje en kilómetros"},
+        {"nombre": "duration_minutes", "tipo": "SMALLINT", "nullable": true, "descripcion": "Duración del viaje en minutos"},
+        {"nombre": "fare_usd", "tipo": "DECIMAL(10,2)", "nullable": false, "descripcion": "Tarifa cobrada al usuario en USD"},
+        {"nombre": "driver_earnings_usd", "tipo": "DECIMAL(10,2)", "nullable": false, "descripcion": "Pago al conductor en USD"},
+        {"nombre": "platform_fee_usd", "tipo": "DECIMAL(10,2)", "nullable": false, "descripcion": "Comisión de la plataforma = fare - driver_earnings"},
+        {"nombre": "payment_method", "tipo": "VARCHAR(20)", "nullable": false, "descripcion": "card | wallet | cash | corporate"},
+        {"nombre": "user_rating", "tipo": "DECIMAL(2,1)", "nullable": true, "descripcion": "Rating del usuario al conductor (1.0-5.0)"},
+        {"nombre": "driver_rating", "tipo": "DECIMAL(2,1)", "nullable": true, "descripcion": "Rating del conductor al usuario (1.0-5.0)"},
+        {"nombre": "wait_time_minutes", "tipo": "SMALLINT", "nullable": true, "descripcion": "Tiempo de espera hasta llegada del conductor"},
+        {"nombre": "is_surge_priced", "tipo": "BOOLEAN", "nullable": false, "descripcion": "True si aplicó precio dinámico elevado"},
+        {"nombre": "surge_multiplier", "tipo": "DECIMAL(4,2)", "nullable": true, "descripcion": "Multiplicador de precio surge (1.0 = sin surge)"}
+      ]
+    },
+    {
+      "entidad": "drivers",
+      "descripcion": "Conductores activos e inactivos de la plataforma",
+      "tabla_gold": "curated.dim_drivers",
+      "campos": [
+        {"nombre": "driver_id", "tipo": "UUID", "nullable": false, "descripcion": "Identificador único del conductor"},
+        {"nombre": "city_id", "tipo": "INT", "nullable": false, "descripcion": "Ciudad de operación principal"},
+        {"nombre": "onboarding_date", "tipo": "DATE", "nullable": false, "descripcion": "Fecha de incorporación a la plataforma"},
+        {"nombre": "status", "tipo": "VARCHAR(20)", "nullable": false, "descripcion": "active | inactive | suspended | training"},
+        {"nombre": "vehicle_type", "tipo": "VARCHAR(30)", "nullable": false, "descripcion": "sedan | suv | van | electric | moto"},
+        {"nombre": "avg_rating", "tipo": "DECIMAL(3,2)", "nullable": true, "descripcion": "Rating promedio del conductor (últimas 500 calificaciones)"},
+        {"nombre": "acceptance_rate_pct", "tipo": "DECIMAL(5,2)", "nullable": true, "descripcion": "% de viajes aceptados sobre los asignados"},
+        {"nombre": "completion_rate_pct", "tipo": "DECIMAL(5,2)", "nullable": true, "descripcion": "% de viajes completados sobre los iniciados"},
+        {"nombre": "trips_lifetime", "tipo": "INT", "nullable": false, "descripcion": "Total de viajes completados desde el inicio"},
+        {"nombre": "is_verified", "tipo": "BOOLEAN", "nullable": false, "descripcion": "True si documentos y antecedentes verificados"}
+      ]
+    },
+    {
+      "entidad": "kpi_snapshots",
+      "descripcion": "Snapshots diarios de todos los KPIs del negocio",
+      "tabla_gold": "warehouse.kpi_snapshots",
+      "campos": [
+        {"nombre": "snapshot_date", "tipo": "DATE", "nullable": false, "descripcion": "Fecha del snapshot"},
+        {"nombre": "kpi_name", "tipo": "VARCHAR(100)", "nullable": false, "descripcion": "Nombre del KPI (del diccionario_kpi.json)"},
+        {"nombre": "valor", "tipo": "DECIMAL(20,4)", "nullable": false, "descripcion": "Valor calculado del KPI"},
+        {"nombre": "unidad", "tipo": "VARCHAR(30)", "nullable": false, "descripcion": "Unidad de medición"},
+        {"nombre": "meta", "tipo": "DECIMAL(20,4)", "nullable": true, "descripcion": "Meta del período"},
+        {"nombre": "semaforo", "tipo": "VARCHAR(10)", "nullable": false, "descripcion": "VERDE | AMARILLO | ROJO"},
+        {"nombre": "desviacion_pct", "tipo": "DECIMAL(10,2)", "nullable": true, "descripcion": "% de desviación vs meta"},
+        {"nombre": "area", "tipo": "VARCHAR(30)", "nullable": false, "descripcion": "Área responsable del KPI"},
+        {"nombre": "periodo", "tipo": "VARCHAR(20)", "nullable": false, "descripcion": "daily | weekly | monthly"},
+        {"nombre": "_computed_at", "tipo": "TIMESTAMP", "nullable": false, "descripcion": "Timestamp de cálculo"}
+      ]
+    }
+  ],
+  "convenciones": {
+    "naming": {
+      "tablas_raw": "raw.<fuente>_raw",
+      "tablas_clean": "clean.<entidad>_clean",
+      "dimensiones": "curated.dim_<entidad>",
+      "hechos": "curated.fact_<evento>",
+      "agregaciones": "warehouse.<entidad>_<granularidad>_agg"
+    },
+    "columnas_auditoria": [
+      "_created_at — Timestamp de creación del registro",
+      "_updated_at — Timestamp de última actualización",
+      "_source — Sistema de origen del dato",
+      "_batch_id — ID del pipeline que lo cargó",
+      "_is_deleted — Soft delete flag"
+    ],
+    "tipos_scd": {
+      "SCD1": "Sobrescritura — campos que cambian frecuentemente (status, segment)",
+      "SCD2": "Historial completo — campos críticos de negocio (precio, ciudad)",
+      "SCD4": "Tabla histórica separada — para atributos con cambio masivo"
+    }
+  }
+}
