@@ -1,0 +1,483 @@
+{
+  "version": "1.0",
+  "fecha_actualizacion": "2026-06-02",
+  "descripcion": "Diccionario completo de KPIs del Business Operating System",
+  "total_kpis": 32,
+  "categorias": {
+    "web_performance": {
+      "descripcion": "Indicadores de rendimiento del canal digital",
+      "kpis": [
+        {
+          "id": "KPI-W01",
+          "nombre": "visitas_mensuales",
+          "nombre_display": "Visitas Mensuales al Sitio Web",
+          "categoria": "web_performance",
+          "formula": "SUM(sesiones) en el período",
+          "unidad": "sesiones",
+          "frecuencia": "Diaria",
+          "responsable": "CMO",
+          "descripcion": "Total de sesiones únicas registradas en el sitio web",
+          "umbrales": {
+            "verde": ">= 50000",
+            "amarillo": "30000 - 49999",
+            "rojo": "< 30000"
+          },
+          "meta_mensual": 60000,
+          "dependencias": ["bounce_rate", "tasa_conversion_web"],
+          "impacto_en": ["leads_generados", "cac"],
+          "fuente_datos": "Google Analytics / Mixpanel"
+        },
+        {
+          "id": "KPI-W02",
+          "nombre": "tasa_conversion_web",
+          "nombre_display": "Tasa de Conversión Web",
+          "categoria": "web_performance",
+          "formula": "(Registros / Visitantes únicos) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Diaria",
+          "responsable": "CMO",
+          "descripcion": "Porcentaje de visitantes que completan un registro o primera acción",
+          "umbrales": {
+            "verde": ">= 3.5",
+            "amarillo": "2.0 - 3.4",
+            "rojo": "< 2.0"
+          },
+          "meta_mensual": 4.0,
+          "dependencias": ["visitas_mensuales", "bounce_rate"],
+          "impacto_en": ["leads_generados", "cac"],
+          "fuente_datos": "Google Analytics + CRM"
+        },
+        {
+          "id": "KPI-W03",
+          "nombre": "bounce_rate",
+          "nombre_display": "Tasa de Rebote",
+          "categoria": "web_performance",
+          "formula": "(Sesiones de una sola página / Total sesiones) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Diaria",
+          "responsable": "CMO",
+          "descripcion": "Porcentaje de usuarios que abandonan sin interactuar",
+          "umbrales": {
+            "verde": "<= 35",
+            "amarillo": "36 - 55",
+            "rojo": "> 55"
+          },
+          "meta_mensual": 32,
+          "dependencias": ["visitas_mensuales"],
+          "impacto_en": ["tasa_conversion_web"],
+          "fuente_datos": "Google Analytics"
+        },
+        {
+          "id": "KPI-W04",
+          "nombre": "leads_generados",
+          "nombre_display": "Leads Generados",
+          "categoria": "web_performance",
+          "formula": "SUM(formularios_enviados + registros_app + solicitudes_demo)",
+          "unidad": "leads",
+          "frecuencia": "Diaria",
+          "responsable": "CMO",
+          "descripcion": "Total de prospectos calificados captados en el período",
+          "umbrales": {
+            "verde": ">= 2000",
+            "amarillo": "1200 - 1999",
+            "rojo": "< 1200"
+          },
+          "meta_mensual": 2500,
+          "dependencias": ["visitas_mensuales", "tasa_conversion_web"],
+          "impacto_en": ["clientes_nuevos", "revenue_nuevo", "cac"],
+          "fuente_datos": "CRM + Google Analytics"
+        }
+      ]
+    },
+    "operaciones": {
+      "descripcion": "Indicadores de eficiencia y calidad operativa",
+      "kpis": [
+        {
+          "id": "KPI-O01",
+          "nombre": "sla_cumplimiento_pct",
+          "nombre_display": "SLA Cumplimiento %",
+          "categoria": "operaciones",
+          "formula": "(Servicios entregados en SLA / Total servicios) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Diaria",
+          "responsable": "COO",
+          "descripcion": "Porcentaje de servicios entregados dentro del tiempo comprometido",
+          "umbrales": {
+            "verde": ">= 95",
+            "amarillo": "88 - 94.9",
+            "rojo": "< 88"
+          },
+          "meta_mensual": 96,
+          "dependencias": ["uptime_plataforma_pct", "disponibilidad_conductores"],
+          "impacto_en": ["nps", "csat", "churn_rate_mensual"],
+          "fuente_datos": "Sistema operativo + CRM"
+        },
+        {
+          "id": "KPI-O02",
+          "nombre": "tiempo_resolucion_incidentes_h",
+          "nombre_display": "Tiempo Promedio de Resolución de Incidentes",
+          "categoria": "operaciones",
+          "formula": "AVG(timestamp_cierre - timestamp_apertura) en horas",
+          "unidad": "horas",
+          "frecuencia": "Diaria",
+          "responsable": "COO + CCO",
+          "descripcion": "Tiempo medio desde apertura hasta cierre de un incidente",
+          "umbrales": {
+            "verde": "<= 3.5",
+            "amarillo": "3.6 - 6.0",
+            "rojo": "> 6.0"
+          },
+          "meta_mensual": 3.0,
+          "dependencias": ["first_contact_resolution"],
+          "impacto_en": ["csat", "nps"],
+          "fuente_datos": "Sistema de tickets (Zendesk / Freshdesk)"
+        },
+        {
+          "id": "KPI-O03",
+          "nombre": "uptime_plataforma_pct",
+          "nombre_display": "Uptime de Plataforma %",
+          "categoria": "operaciones",
+          "formula": "((Minutos_totales - Minutos_caída) / Minutos_totales) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Tiempo real",
+          "responsable": "CTO",
+          "descripcion": "Disponibilidad del sistema tecnológico en el período",
+          "umbrales": {
+            "verde": ">= 99.5",
+            "amarillo": "98.0 - 99.4",
+            "rojo": "< 98.0"
+          },
+          "meta_mensual": 99.9,
+          "dependencias": [],
+          "impacto_en": ["sla_cumplimiento_pct", "nps", "revenue_total"],
+          "fuente_datos": "Datadog / New Relic / CloudWatch"
+        },
+        {
+          "id": "KPI-O04",
+          "nombre": "costo_por_viaje_usd",
+          "nombre_display": "Costo Operativo por Viaje",
+          "categoria": "operaciones",
+          "formula": "Costos_operativos_totales / Total_viajes_completados",
+          "unidad": "USD",
+          "frecuencia": "Mensual",
+          "responsable": "COO + CFO",
+          "descripcion": "Costo variable promedio para completar un viaje",
+          "umbrales": {
+            "verde": "<= 1.60",
+            "amarillo": "1.61 - 1.90",
+            "rojo": "> 1.90"
+          },
+          "meta_mensual": 1.57,
+          "dependencias": ["utilizacion_flota_pct"],
+          "impacto_en": ["margen_bruto_pct", "ebitda"],
+          "fuente_datos": "ERP + Sistema operativo"
+        }
+      ]
+    },
+    "clientes": {
+      "descripcion": "Indicadores de experiencia y fidelización del cliente",
+      "kpis": [
+        {
+          "id": "KPI-C01",
+          "nombre": "nps",
+          "nombre_display": "Net Promoter Score (NPS)",
+          "categoria": "clientes",
+          "formula": "% Promotores (9-10) - % Detractores (0-6)",
+          "unidad": "puntos_nps",
+          "frecuencia": "Mensual",
+          "responsable": "CCO",
+          "descripcion": "Índice de lealtad y probabilidad de recomendación del cliente",
+          "umbrales": {
+            "verde": ">= 65",
+            "amarillo": "45 - 64",
+            "rojo": "< 45"
+          },
+          "meta_mensual": 72,
+          "dependencias": ["csat", "tiempo_resolucion_incidentes_h", "sla_cumplimiento_pct"],
+          "impacto_en": ["churn_rate_mensual", "cac", "revenue_total"],
+          "fuente_datos": "Encuesta post-viaje + Plataforma NPS"
+        },
+        {
+          "id": "KPI-C02",
+          "nombre": "csat",
+          "nombre_display": "Customer Satisfaction Score (CSAT)",
+          "categoria": "clientes",
+          "formula": "(Calificaciones 4-5 / Total calificaciones) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Diaria",
+          "responsable": "CCO",
+          "descripcion": "Porcentaje de usuarios satisfechos post-interacción (rating 4 o 5 estrellas)",
+          "umbrales": {
+            "verde": ">= 88",
+            "amarillo": "75 - 87.9",
+            "rojo": "< 75"
+          },
+          "meta_mensual": 92,
+          "dependencias": ["sla_cumplimiento_pct", "uptime_plataforma_pct"],
+          "impacto_en": ["nps", "churn_rate_mensual", "ltv_promedio"],
+          "fuente_datos": "Rating in-app post-viaje"
+        },
+        {
+          "id": "KPI-C03",
+          "nombre": "churn_rate_mensual",
+          "nombre_display": "Tasa de Churn Mensual",
+          "categoria": "clientes",
+          "formula": "(Usuarios que dejan de usar en mes M / Usuarios activos mes M-1) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Mensual",
+          "responsable": "CCO + CMO",
+          "descripcion": "Porcentaje de usuarios activos que abandonan la plataforma en el mes",
+          "umbrales": {
+            "verde": "<= 2.5",
+            "amarillo": "2.6 - 4.0",
+            "rojo": "> 4.0"
+          },
+          "meta_mensual": 2.2,
+          "dependencias": ["nps", "csat"],
+          "impacto_en": ["ltv_promedio", "revenue_total", "cac"],
+          "fuente_datos": "CRM + Sistema de usuarios"
+        },
+        {
+          "id": "KPI-C04",
+          "nombre": "usuarios_activos_mensuales",
+          "nombre_display": "Usuarios Activos Mensuales (MAU)",
+          "categoria": "clientes",
+          "formula": "COUNT(usuarios con >= 1 viaje en los últimos 30 días)",
+          "unidad": "usuarios",
+          "frecuencia": "Diaria",
+          "responsable": "CCO + CMO",
+          "descripcion": "Cantidad de usuarios únicos con actividad en los últimos 30 días",
+          "umbrales": {
+            "verde": ">= 450000",
+            "amarillo": "300000 - 449999",
+            "rojo": "< 300000"
+          },
+          "meta_mensual": 500000,
+          "dependencias": ["churn_rate_mensual", "leads_generados"],
+          "impacto_en": ["revenue_total", "ebitda"],
+          "fuente_datos": "Base de datos de usuarios + Analytics"
+        }
+      ]
+    },
+    "finanzas": {
+      "descripcion": "Indicadores de salud financiera y rentabilidad",
+      "kpis": [
+        {
+          "id": "KPI-F01",
+          "nombre": "revenue_total_usd",
+          "nombre_display": "Ingresos Totales",
+          "categoria": "finanzas",
+          "formula": "SUM(ingresos_por_viaje + ingresos_corporativos + ingresos_publicidad + otros)",
+          "unidad": "USD",
+          "frecuencia": "Diaria",
+          "responsable": "CFO",
+          "descripcion": "Total de ingresos reconocidos en el período",
+          "umbrales": {
+            "verde": ">= 1150000",
+            "amarillo": "900000 - 1149999",
+            "rojo": "< 900000"
+          },
+          "meta_mensual": 1250000,
+          "dependencias": ["usuarios_activos_mensuales", "ticket_promedio", "viajes_por_dia"],
+          "impacto_en": ["ebitda", "roi", "flujo_caja"],
+          "fuente_datos": "ERP / Sistema de facturación"
+        },
+        {
+          "id": "KPI-F02",
+          "nombre": "cac_usd",
+          "nombre_display": "Costo de Adquisición de Cliente (CAC)",
+          "categoria": "finanzas",
+          "formula": "(Gasto_marketing + Gasto_ventas) / Clientes_nuevos_adquiridos",
+          "unidad": "USD",
+          "frecuencia": "Mensual",
+          "responsable": "CMO + CFO",
+          "descripcion": "Inversión promedio para adquirir un cliente que realiza su primer viaje",
+          "umbrales": {
+            "verde": "<= 8.0",
+            "amarillo": "8.1 - 12.0",
+            "rojo": "> 12.0"
+          },
+          "meta_mensual": 7.5,
+          "dependencias": ["leads_generados", "tasa_conversion_web"],
+          "impacto_en": ["ltv_cac_ratio", "payback_period_meses"],
+          "fuente_datos": "CRM + Herramientas de marketing + ERP"
+        },
+        {
+          "id": "KPI-F03",
+          "nombre": "ltv_promedio_usd",
+          "nombre_display": "Lifetime Value Promedio (LTV)",
+          "categoria": "finanzas",
+          "formula": "Ticket_promedio × Frecuencia_mensual × Meses_vida_promedio × Margen_bruto_pct",
+          "unidad": "USD",
+          "frecuencia": "Mensual",
+          "responsable": "CFO + CCO",
+          "descripcion": "Valor económico total que genera un cliente durante toda su relación con la empresa",
+          "umbrales": {
+            "verde": ">= 130",
+            "amarillo": "90 - 129",
+            "rojo": "< 90"
+          },
+          "meta_mensual": 140,
+          "dependencias": ["churn_rate_mensual", "ticket_promedio", "margen_bruto_pct"],
+          "impacto_en": ["ltv_cac_ratio", "ebitda"],
+          "fuente_datos": "CRM + ERP + Modelo financiero"
+        },
+        {
+          "id": "KPI-F04",
+          "nombre": "ebitda_pct",
+          "nombre_display": "Margen EBITDA %",
+          "categoria": "finanzas",
+          "formula": "(EBITDA / Revenue_total) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Mensual",
+          "responsable": "CFO",
+          "descripcion": "Rentabilidad operativa antes de intereses, impuestos, depreciación y amortización",
+          "umbrales": {
+            "verde": ">= 20",
+            "amarillo": "12 - 19.9",
+            "rojo": "< 12"
+          },
+          "meta_mensual": 22,
+          "dependencias": ["revenue_total_usd", "costo_por_viaje_usd", "cac_usd"],
+          "impacto_en": ["roi", "flujo_caja", "valor_empresa"],
+          "fuente_datos": "ERP / Contabilidad"
+        },
+        {
+          "id": "KPI-F05",
+          "nombre": "roi_pct",
+          "nombre_display": "Retorno sobre la Inversión (ROI)",
+          "categoria": "finanzas",
+          "formula": "((Ganancia_neta - Inversión) / Inversión) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Trimestral",
+          "responsable": "CFO",
+          "descripcion": "Retorno generado sobre el capital invertido en el período",
+          "umbrales": {
+            "verde": ">= 25",
+            "amarillo": "15 - 24.9",
+            "rojo": "< 15"
+          },
+          "meta_trimestral": 28,
+          "dependencias": ["ebitda_pct", "capex_usd"],
+          "impacto_en": ["valor_empresa", "decision_inversion"],
+          "fuente_datos": "ERP / Modelo financiero"
+        },
+        {
+          "id": "KPI-F06",
+          "nombre": "ltv_cac_ratio",
+          "nombre_display": "Ratio LTV/CAC",
+          "categoria": "finanzas",
+          "formula": "LTV_promedio / CAC",
+          "unidad": "ratio",
+          "frecuencia": "Mensual",
+          "responsable": "CFO + CMO",
+          "descripcion": "Eficiencia del modelo de adquisición: cuánto valor generamos vs. cuánto costó adquirir",
+          "umbrales": {
+            "verde": ">= 15",
+            "amarillo": "8 - 14.9",
+            "rojo": "< 8"
+          },
+          "meta_mensual": 18.7,
+          "dependencias": ["ltv_promedio_usd", "cac_usd"],
+          "impacto_en": ["decision_escalar_marketing", "sustentabilidad_modelo"],
+          "fuente_datos": "Calculado de KPI-F02 y KPI-F03"
+        },
+        {
+          "id": "KPI-F07",
+          "nombre": "margen_bruto_pct",
+          "nombre_display": "Margen Bruto %",
+          "categoria": "finanzas",
+          "formula": "((Revenue - COGS) / Revenue) * 100",
+          "unidad": "porcentaje",
+          "frecuencia": "Mensual",
+          "responsable": "CFO + COO",
+          "descripcion": "Porcentaje de ingresos que queda después de los costos directos del servicio",
+          "umbrales": {
+            "verde": ">= 45",
+            "amarillo": "35 - 44.9",
+            "rojo": "< 35"
+          },
+          "meta_mensual": 48,
+          "dependencias": ["costo_por_viaje_usd", "revenue_total_usd"],
+          "impacto_en": ["ebitda_pct", "ltv_promedio_usd"],
+          "fuente_datos": "ERP"
+        }
+      ]
+    },
+    "datos_tecnologia": {
+      "descripcion": "Indicadores de calidad de datos y plataforma tecnológica",
+      "kpis": [
+        {
+          "id": "KPI-D01",
+          "nombre": "data_quality_score_pct",
+          "nombre_display": "Score de Calidad de Datos %",
+          "categoria": "datos_tecnologia",
+          "formula": "WEIGHTED_AVG(completitud*0.3, exactitud*0.3, unicidad*0.2, vigencia*0.2)",
+          "unidad": "porcentaje",
+          "frecuencia": "Diaria",
+          "responsable": "CDO",
+          "descripcion": "Score ponderado de las 4 dimensiones de calidad de datos",
+          "umbrales": {
+            "verde": ">= 95",
+            "amarillo": "85 - 94.9",
+            "rojo": "< 85"
+          },
+          "meta_mensual": 97,
+          "dependencias": [],
+          "impacto_en": ["precision_modelos_ml", "confiabilidad_kpis"],
+          "fuente_datos": "Great Expectations / dbt tests"
+        }
+      ]
+    }
+  },
+  "cadena_de_valor": {
+    "descripcion": "Cómo se relacionan los KPIs en la cadena de generación de valor",
+    "flujo": [
+      {
+        "paso": 1,
+        "kpi": "visitas_mensuales",
+        "descripcion": "Tráfico al sitio web"
+      },
+      {
+        "paso": 2,
+        "kpi": "tasa_conversion_web",
+        "descripcion": "Porcentaje que se convierte en lead"
+      },
+      {
+        "paso": 3,
+        "kpi": "leads_generados",
+        "descripcion": "Prospectos captados"
+      },
+      {
+        "paso": 4,
+        "kpi": "tasa_activacion_pct",
+        "descripcion": "Usuarios que completan primer viaje"
+      },
+      {
+        "paso": 5,
+        "kpi": "usuarios_activos_mensuales",
+        "descripcion": "Base de usuarios activos"
+      },
+      {
+        "paso": 6,
+        "kpi": "revenue_total_usd",
+        "descripcion": "Ingresos generados"
+      },
+      {
+        "paso": 7,
+        "kpi": "margen_bruto_pct",
+        "descripcion": "Rentabilidad del servicio"
+      },
+      {
+        "paso": 8,
+        "kpi": "ebitda_pct",
+        "descripcion": "Rentabilidad operativa"
+      },
+      {
+        "paso": 9,
+        "kpi": "roi_pct",
+        "descripcion": "Retorno para accionistas"
+      }
+    ]
+  }
+}

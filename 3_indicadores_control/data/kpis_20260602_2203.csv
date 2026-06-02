@@ -1,0 +1,19 @@
+timestamp,area,kpi,valor,meta,unidad,semaforo,desviacion_pct,alerta
+2026-06-02T22:03:21.103440,Web,visitas_mensuales,65735,60000,sesiones,VERDE,9.56,
+2026-06-02T22:03:21.103489,Web,tasa_conversion_web,3.97,4.0,%,VERDE,-0.75,
+2026-06-02T22:03:21.103495,Web,bounce_rate,29.2,32,%,VERDE,-8.75,
+2026-06-02T22:03:21.103501,Web,leads_generados,1928,2500,leads,AMARILLO,-22.88,⚠️ Generación de leads insuficiente — activar campañas adicionales
+2026-06-02T22:03:21.103506,Ops,sla_cumplimiento_pct,89.3,96,%,AMARILLO,-6.98,🔴 SLA comprometido — revisar operaciones y capacidad
+2026-06-02T22:03:21.103511,Ops,tiempo_resolucion_h,5.7,3.0,horas,AMARILLO,90.0,⚠️ Tiempo de resolución fuera de SLA — reforzar equipo de CS
+2026-06-02T22:03:21.103515,Tech,uptime_plataforma_pct,99.11,99.9,%,AMARILLO,-0.79,🔴 Disponibilidad de plataforma comprometida — escalada a CTO
+2026-06-02T22:03:21.103524,Ops,costo_por_viaje_usd,1.64,1.57,USD,AMARILLO,4.46,⚠️ Costo por viaje elevado — revisar eficiencia operativa
+2026-06-02T22:03:21.103529,CX,nps,53,72,puntos,AMARILLO,-26.39,🔴 NPS por debajo del objetivo — revisar experiencia del cliente
+2026-06-02T22:03:21.103534,CX,csat,84.0,92,%,AMARILLO,-8.7,⚠️ Satisfacción del cliente baja — análisis de puntos de dolor
+2026-06-02T22:03:21.103538,CX,churn_rate_mensual,2.55,2.2,%,ROJO,15.91,🔴 Churn elevado — activar programa de retención urgente
+2026-06-02T22:03:21.103542,CX,usuarios_activos_mensuales,400597,500000,usuarios,AMARILLO,-19.88,⚠️ MAU por debajo del objetivo — revisar activación y retención
+2026-06-02T22:03:21.103545,Fin,revenue_total_usd,1119319,1250000,USD,AMARILLO,-10.45,🔴 Revenue bajo el objetivo — revisar pipeline comercial
+2026-06-02T22:03:21.103549,Fin,cac_usd,11.79,7.5,USD,AMARILLO,57.2,⚠️ CAC elevado — optimizar canales de adquisición
+2026-06-02T22:03:21.103552,Fin,ltv_promedio_usd,142.8,140,USD,VERDE,2.0,
+2026-06-02T22:03:21.103555,Fin,ebitda_pct,25.6,22,%,VERDE,16.36,
+2026-06-02T22:03:21.103558,Fin,roi_pct,27.8,28,%,VERDE,-0.71,
+2026-06-02T22:03:21.103562,Fin,margen_bruto_pct,39.6,48,%,AMARILLO,-17.5,⚠️ Margen bruto bajo — revisar costos directos del servicio

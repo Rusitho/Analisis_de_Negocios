@@ -1,0 +1,32 @@
+# Business Operating System — Dependencias Python
+# Todos los scripts del BOS están implementados sin dependencias externas
+# para garantizar máxima portabilidad y auditabilidad.
+#
+# Las siguientes son dependencias OPCIONALES para extender funcionalidades:
+
+# Data Analysis (opcional — para análisis ad-hoc)
+# pandas>=2.0.0
+# numpy>=1.24.0
+
+# Visualización (opcional — para dashboards avanzados)
+# matplotlib>=3.7.0
+# plotly>=5.15.0
+
+# Machine Learning (opcional — para modelos avanzados)
+# scikit-learn>=1.3.0
+# statsmodels>=0.14.0
+
+# Database connectivity (opcional)
+# sqlalchemy>=2.0.0
+# psycopg2-binary>=2.9.0
+
+# AI/Agents (opcional)
+# anthropic>=0.28.0
+# langchain>=0.2.0
+
+# Data Quality (opcional)
+# great-expectations>=0.18.0
+
+# Nota: Los scripts core (tablero_control.py, forecast_ingresos.py,
+# forecast_demanda.py, simulador_escenarios.py) funcionan con la
+# librería estándar de Python 3.8+ sin instalaciones adicionales.

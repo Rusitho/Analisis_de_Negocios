@@ -1,0 +1,175 @@
+{
+  "version": "1.0",
+  "fecha_actualizacion": "2026-06-02",
+  "descripcion": "Plan de tracking de eventos digitales — todos los eventos con su impacto en KPIs de negocio",
+  "plataformas": ["Google Analytics 4", "Mixpanel", "Meta Pixel", "Google Ads Tag"],
+  "eventos": [
+    {
+      "id": "EVT-001",
+      "nombre": "cta_hero_click",
+      "descripcion": "Clic en CTA principal del hero de la homepage o landing page",
+      "trigger": "Click en botón 'Descargar App' o 'Comenzar ahora'",
+      "parametros": {
+        "page_type": "homepage|landing_page",
+        "campaign_id": "string",
+        "button_text": "string",
+        "user_source": "string"
+      },
+      "impacto_en_kpis": {
+        "leads_generados": "Incrementa contador de leads cuando lleva a registro",
+        "tasa_conversion_web": "Numerador del ratio de conversión",
+        "cac": "Influye en el volumen de conversiones por canal"
+      },
+      "implementacion": "Google Tag Manager — Custom HTML Tag",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-002",
+      "nombre": "form_submit_lead",
+      "descripcion": "Envío exitoso de formulario de contacto o solicitud de demo B2B",
+      "trigger": "Submit exitoso del formulario — confirmación visible en pantalla",
+      "parametros": {
+        "form_type": "contact|demo|corporate",
+        "company_size": "string",
+        "lead_source": "string",
+        "campaign_id": "string"
+      },
+      "impacto_en_kpis": {
+        "leads_generados": "Incrementa directamente el contador de leads",
+        "cac": "Divide el gasto total de marketing entre estos eventos",
+        "revenue_nuevo": "Precursor de conversión a cliente"
+      },
+      "implementacion": "Google Tag Manager — Form Submit Listener",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-003",
+      "nombre": "app_download_intent",
+      "descripcion": "Usuario hace clic en enlace de descarga de app (App Store / Play Store)",
+      "trigger": "Click en badge de App Store o Google Play",
+      "parametros": {
+        "store": "app_store|play_store",
+        "page": "string",
+        "campaign_id": "string"
+      },
+      "impacto_en_kpis": {
+        "usuarios_activos_mensuales": "Precursor de MAU — no todos los que descargan se activan",
+        "cac": "Evento de conversión para campañas de instalación",
+        "leads_generados": "Cuenta como lead de alta intención"
+      },
+      "implementacion": "Google Tag Manager — Link Click Trigger",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-004",
+      "nombre": "user_registration_complete",
+      "descripcion": "Registro exitoso de nuevo usuario en la plataforma",
+      "trigger": "Evento de backend al completar el registro (webhook → GTM server-side)",
+      "parametros": {
+        "user_id": "string (hashed)",
+        "registration_channel": "organic|paid|referral|corporate",
+        "campaign_id": "string",
+        "city": "string"
+      },
+      "impacto_en_kpis": {
+        "leads_generados": "Conversión de visitante a usuario registrado",
+        "tasa_conversion_web": "Denominador de la tasa de activación",
+        "cac": "Punto de referencia para calcular CAC por canal"
+      },
+      "implementacion": "Server-side GTM + GA4 Measurement Protocol",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-005",
+      "nombre": "first_trip_completed",
+      "descripcion": "Usuario completa su primer viaje en la plataforma",
+      "trigger": "Evento de backend al finalizar primer viaje (webhook → analytics)",
+      "parametros": {
+        "user_id": "string (hashed)",
+        "days_since_registration": "number",
+        "trip_value_usd": "number",
+        "city": "string",
+        "acquisition_channel": "string"
+      },
+      "impacto_en_kpis": {
+        "usuarios_activos_mensuales": "Usuario se convierte en MAU",
+        "revenue_total_usd": "Primer ingreso generado por el usuario",
+        "cac": "Punto final para calcular CAC real (registro → primer viaje)",
+        "ltv_promedio_usd": "Inicio del cálculo de LTV"
+      },
+      "implementacion": "Backend event → BigQuery → GA4 via Measurement Protocol",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-006",
+      "nombre": "purchase_completed",
+      "descripcion": "Transacción de pago completada (viaje o suscripción)",
+      "trigger": "Confirmación de pago exitoso del procesador",
+      "parametros": {
+        "transaction_id": "string",
+        "value": "number",
+        "currency": "USD|PEN|COP",
+        "product_type": "trip|subscription_monthly|subscription_annual|corporate",
+        "user_id": "string (hashed)"
+      },
+      "impacto_en_kpis": {
+        "revenue_total_usd": "Incrementa directamente los ingresos",
+        "margen_bruto_pct": "Base para calcular margen de la transacción",
+        "ltv_promedio_usd": "Acumula el valor de vida del cliente",
+        "roi_pct": "Parte del numerador del ROI"
+      },
+      "implementacion": "E-commerce tracking GA4 + server-side verification",
+      "prioridad": "Crítica"
+    },
+    {
+      "id": "EVT-007",
+      "nombre": "content_engagement",
+      "descripcion": "Usuario consume contenido del blog (lectura > 60% del artículo)",
+      "trigger": "Scroll depth > 60% en páginas de blog",
+      "parametros": {
+        "article_slug": "string",
+        "category": "string",
+        "scroll_depth_pct": "number",
+        "time_on_page_s": "number"
+      },
+      "impacto_en_kpis": {
+        "bounce_rate": "Usuarios que leen > 60% no rebotan",
+        "visitas_mensuales": "Calidad de sesión para SEO",
+        "leads_generados": "Artículos de alta intención llevan a conversión"
+      },
+      "implementacion": "Google Tag Manager — Scroll Depth Trigger",
+      "prioridad": "Media"
+    },
+    {
+      "id": "EVT-008",
+      "nombre": "nps_survey_response",
+      "descripcion": "Usuario responde encuesta NPS in-app post-viaje",
+      "trigger": "Envío del formulario NPS en la app",
+      "parametros": {
+        "user_id": "string (hashed)",
+        "nps_score": "number (0-10)",
+        "trip_id": "string",
+        "days_as_user": "number"
+      },
+      "impacto_en_kpis": {
+        "nps": "Input directo al cálculo del NPS",
+        "csat": "Correlaciona con satisfacción general",
+        "churn_rate_mensual": "Detractores tienen mayor probabilidad de churn"
+      },
+      "implementacion": "Backend event → Data Warehouse → KPI engine",
+      "prioridad": "Alta"
+    }
+  ],
+  "cadena_de_valor_digital": {
+    "descripcion": "Cómo cada evento contribuye a los KPIs financieros finales",
+    "flujo": [
+      {"evento": "cta_hero_click", "genera": "Intención de conversión"},
+      {"evento": "form_submit_lead / app_download_intent", "genera": "Lead captado"},
+      {"evento": "user_registration_complete", "genera": "leads_generados ↑"},
+      {"evento": "first_trip_completed", "genera": "usuarios_activos_mensuales ↑, CAC calculado"},
+      {"evento": "purchase_completed", "genera": "revenue_total_usd ↑, LTV acumulado"},
+      {"evento": "nps_survey_response", "genera": "NPS medido, churn predicho"},
+      {"conclusion": "tráfico_web → leads → activaciones → revenue → ROI"}
+    ]
+  }
+}

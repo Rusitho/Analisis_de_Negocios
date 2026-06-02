@@ -1,0 +1,781 @@
+{
+  "generado_en": "2026-06-02T22:04:10.274449",
+  "estado_base": {
+    "trafico_web_mensual": 55000,
+    "tasa_conversion_pct": 3.8,
+    "usuarios_activos_mensuales": 385000,
+    "viajes_por_usuario_mes": 18.0,
+    "ticket_promedio_usd": 2.8,
+    "cac_usd": 9.0,
+    "ltv_usd": 125.0,
+    "churn_mensual_pct": 3.1,
+    "margen_bruto_pct": 44.0,
+    "conductores_activos": 2800,
+    "utilizacion_flota_pct": 72.0,
+    "costo_por_viaje_usd": 1.72,
+    "sla_cumplimiento_pct": 92.0,
+    "marketing_pct_revenue": 12.0,
+    "tech_ops_pct_revenue": 10.0,
+    "ga_pct_revenue": 8.0,
+    "headcount": 175,
+    "productividad_usd_por_empleado": 85000.0
+  },
+  "escenarios": [
+    {
+      "escenario": "ESC-001: Aumento de tráfico web +30%",
+      "descripcion": "¿Qué ocurre si se incrementa el tráfico web en un 30% manteniendo la tasa de conversión?",
+      "cambios_aplicados": {
+        "trafico_web_mensual": {
+          "tipo": "delta_pct",
+          "valor": 30
+        },
+        "usuarios_activos_mensuales": {
+          "tipo": "delta_pct",
+          "valor": 0.7979999999999999
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 19558843.92,
+        "ebitda_mensual_usd": 2738238.15,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 232843,
+        "costo_total_mensual_usd": 16820605.77,
+        "usuarios_activos_mensuales": 388072.30000000005,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 154843.92,
+          "delta_pct": 0.8,
+          "direccion": "↑"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": 21678.15,
+          "delta_pct": 0.8,
+          "direccion": "↑"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 1843,
+          "delta_pct": 0.8,
+          "direccion": "↑"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": 133165.77,
+          "delta_pct": 0.8,
+          "direccion": "↑"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 3072.3,
+          "delta_pct": 0.8,
+          "direccion": "↑"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Invertir en SEO y campañas paid con ROAS > 3x para lograr este crecimiento de forma rentable.",
+      "timestamp": "2026-06-02T22:04:10.272068"
+    },
+    {
+      "escenario": "ESC-002: CAC sube 40% (competencia agresiva)",
+      "descripcion": "¿Qué ocurre si el CAC aumenta un 40% por entrada de competidor con subsidios?",
+      "cambios_aplicados": {
+        "cac_usd": {
+          "tipo": "delta_pct",
+          "valor": 40
+        },
+        "marketing_pct_revenue": {
+          "tipo": "delta_pct",
+          "valor": 35
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 1901592.0,
+        "ebitda_margin_pct": 9.8,
+        "roi_pct": 892.06,
+        "ltv_cac_ratio": 9.92,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 17502408.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 12.6,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": -814968.0,
+          "delta_pct": -30.0,
+          "direccion": "↓"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": -4.2,
+          "delta_pct": -30.0,
+          "direccion": "↓"
+        },
+        "roi_pct": {
+          "delta_absoluto": -396.83,
+          "delta_pct": -30.79,
+          "direccion": "↓"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": -3.97,
+          "delta_pct": -28.58,
+          "direccion": "↓"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": 814968.0,
+          "delta_pct": 4.88,
+          "direccion": "↑"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "cac_usd": {
+          "delta_absoluto": 3.6,
+          "delta_pct": 40.0,
+          "direccion": "↑"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Si el CAC sube 40%, redirigir presupuesto a retención (retener es 5x más barato que adquirir). Activar programa de referidos.",
+      "timestamp": "2026-06-02T22:04:10.272454"
+    },
+    {
+      "escenario": "ESC-003: Caída de conversión -25%",
+      "descripcion": "¿Qué ocurre si la tasa de conversión cae un 25% (nuevo competidor, mala experiencia)?",
+      "cambios_aplicados": {
+        "tasa_conversion_pct": {
+          "tipo": "delta_pct",
+          "valor": -25
+        },
+        "usuarios_activos_mensuales": {
+          "tipo": "delta_pct",
+          "valor": -15
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 16493400.0,
+        "ebitda_mensual_usd": 2309076.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 196350,
+        "costo_total_mensual_usd": 14184324.0,
+        "usuarios_activos_mensuales": 327250.0,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": -2910600.0,
+          "delta_pct": -15.0,
+          "direccion": "↓"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": -407484.0,
+          "delta_pct": -15.0,
+          "direccion": "↓"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": -34650,
+          "delta_pct": -15.0,
+          "direccion": "↓"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": -2503116.0,
+          "delta_pct": -15.0,
+          "direccion": "↓"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": -57750.0,
+          "delta_pct": -15.0,
+          "direccion": "↓"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Auditar el funnel inmediatamente. A/B test de landing pages. Revisar calidad del tráfico pagado.",
+      "timestamp": "2026-06-02T22:04:10.272681"
+    },
+    {
+      "escenario": "ESC-004: Contratación de +50 empleados",
+      "descripcion": "¿Qué ocurre si contratamos 50 empleados adicionales (expansión)?",
+      "cambios_aplicados": {
+        "headcount": {
+          "tipo": "delta_pct",
+          "valor": 29
+        },
+        "ga_pct_revenue": {
+          "tipo": "delta_pct",
+          "valor": 20
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2406096.0,
+        "ebitda_margin_pct": 12.4,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16997904.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": -310464.0,
+          "delta_pct": -11.43,
+          "direccion": "↓"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": -1.6,
+          "delta_pct": -11.43,
+          "direccion": "↓"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": 310464.0,
+          "delta_pct": 1.86,
+          "direccion": "↑"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Contratar solo si el crecimiento de revenue puede absorber el ~$3.5M adicional anual en nómina. Hacer análisis de ROI por función.",
+      "timestamp": "2026-06-02T22:04:10.273023"
+    },
+    {
+      "escenario": "ESC-005: Aumento de demanda +50% en diciembre",
+      "descripcion": "¿Qué ocurre en el mes de mayor demanda con un pico del 50% en viajes?",
+      "cambios_aplicados": {
+        "usuarios_activos_mensuales": {
+          "tipo": "delta_pct",
+          "valor": 15
+        },
+        "viajes_por_usuario_mes": {
+          "tipo": "delta_pct",
+          "valor": 30
+        },
+        "ticket_promedio_usd": {
+          "tipo": "delta_pct",
+          "valor": 12
+        },
+        "conductores_activos": {
+          "tipo": "delta_pct",
+          "valor": 20
+        },
+        "costo_por_viaje_usd": {
+          "tipo": "delta_pct",
+          "valor": 5
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 32490057.6,
+        "ebitda_mensual_usd": 4548608.06,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 345345,
+        "costo_total_mensual_usd": 27941449.54,
+        "usuarios_activos_mensuales": 442749.99999999994,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 13086057.6,
+          "delta_pct": 67.44,
+          "direccion": "↑"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": 1832048.06,
+          "delta_pct": 67.44,
+          "direccion": "↑"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 114345,
+          "delta_pct": 49.5,
+          "direccion": "↑"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": 11254009.54,
+          "delta_pct": 67.44,
+          "direccion": "↑"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 57750.0,
+          "delta_pct": 15.0,
+          "direccion": "↑"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Preparar plan de contingencia de flota: +20% conductores activos, surge pricing moderado (1.2x-1.5x). El EBITDA mejora significativamente.",
+      "timestamp": "2026-06-02T22:04:10.273334"
+    },
+    {
+      "escenario": "ESC-006: Churn sube al 6% mensual",
+      "descripcion": "¿Qué ocurre si el churn mensual sube de 3.1% a 6% (crisis de experiencia)?",
+      "cambios_aplicados": {
+        "churn_mensual_pct": {
+          "tipo": "absoluto",
+          "valor": 6.0
+        },
+        "usuarios_activos_mensuales": {
+          "tipo": "delta_pct",
+          "valor": -18
+        },
+        "ltv_usd": {
+          "tipo": "delta_pct",
+          "valor": -35
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 15911280.0,
+        "ebitda_mensual_usd": 2227579.2,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 802.78,
+        "ltv_cac_ratio": 9.03,
+        "viajes_diarios": 189420,
+        "costo_total_mensual_usd": 13683700.8,
+        "usuarios_activos_mensuales": 315700.0,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 6.0
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": -3492720.0,
+          "delta_pct": -18.0,
+          "direccion": "↓"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": -488980.8,
+          "delta_pct": -18.0,
+          "direccion": "↓"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "roi_pct": {
+          "delta_absoluto": -486.11,
+          "delta_pct": -37.72,
+          "direccion": "↓"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": -4.86,
+          "delta_pct": -34.99,
+          "direccion": "↓"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": -41580,
+          "delta_pct": -18.0,
+          "direccion": "↓"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": -3003739.2,
+          "delta_pct": -18.0,
+          "direccion": "↓"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": -69300.0,
+          "delta_pct": -18.0,
+          "direccion": "↓"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 2.9,
+          "delta_pct": 93.55,
+          "direccion": "↑"
+        }
+      },
+      "recomendacion": "Churn de 6% es crítico — activar protocolo de retención de emergencia. El impacto en LTV y revenue puede ser devastador si no se corrige en < 60 días.",
+      "timestamp": "2026-06-02T22:04:10.273587"
+    },
+    {
+      "escenario": "ESC-007: Reducción de costos operativos -15%",
+      "descripcion": "¿Qué impacto tiene lograr -15% en el costo por viaje via automatización?",
+      "cambios_aplicados": {
+        "costo_por_viaje_usd": {
+          "tipo": "delta_pct",
+          "valor": -15
+        },
+        "margen_bruto_pct": {
+          "tipo": "delta_pct",
+          "valor": 12
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 3741091.2,
+        "ebitda_margin_pct": 19.28,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 15662908.8,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": 1024531.2,
+          "delta_pct": 37.71,
+          "direccion": "↑"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": 5.28,
+          "delta_pct": 37.71,
+          "direccion": "↑"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": -1024531.2,
+          "delta_pct": -6.14,
+          "direccion": "↓"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "Esta mejora de eficiencia es la palanca con mayor impacto en EBITDA. Invertir en automatización de procesos tiene payback < 12 meses.",
+      "timestamp": "2026-06-02T22:04:10.273902"
+    },
+    {
+      "escenario": "ESC-008: Expansión a nueva ciudad (costo +$1.5M anual)",
+      "descripcion": "¿Qué ocurre si abrimos una nueva ciudad con inversión de $1.5M/año y 12% de revenue adicional en 18 meses?",
+      "cambios_aplicados": {
+        "ga_pct_revenue": {
+          "tipo": "delta_pct",
+          "valor": 15
+        },
+        "marketing_pct_revenue": {
+          "tipo": "delta_pct",
+          "valor": 20
+        },
+        "usuarios_activos_mensuales": {
+          "tipo": "delta_pct",
+          "valor": 8
+        }
+      },
+      "estado_base": {
+        "revenue_mensual_usd": 19404000.0,
+        "ebitda_mensual_usd": 2716560.0,
+        "ebitda_margin_pct": 14.0,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 231000,
+        "costo_total_mensual_usd": 16687440.0,
+        "usuarios_activos_mensuales": 385000,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "estado_simulado": {
+        "revenue_mensual_usd": 20956320.0,
+        "ebitda_mensual_usd": 2179457.28,
+        "ebitda_margin_pct": 10.4,
+        "roi_pct": 1288.89,
+        "ltv_cac_ratio": 13.89,
+        "viajes_diarios": 249480,
+        "costo_total_mensual_usd": 18776862.72,
+        "usuarios_activos_mensuales": 415800.0,
+        "cac_usd": 9.0,
+        "churn_mensual_pct": 3.1
+      },
+      "impacto": {
+        "revenue_mensual_usd": {
+          "delta_absoluto": 1552320.0,
+          "delta_pct": 8.0,
+          "direccion": "↑"
+        },
+        "ebitda_mensual_usd": {
+          "delta_absoluto": -537102.72,
+          "delta_pct": -19.77,
+          "direccion": "↓"
+        },
+        "ebitda_margin_pct": {
+          "delta_absoluto": -3.6,
+          "delta_pct": -25.71,
+          "direccion": "↓"
+        },
+        "roi_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "ltv_cac_ratio": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "viajes_diarios": {
+          "delta_absoluto": 18480,
+          "delta_pct": 8.0,
+          "direccion": "↑"
+        },
+        "costo_total_mensual_usd": {
+          "delta_absoluto": 2089422.72,
+          "delta_pct": 12.52,
+          "direccion": "↑"
+        },
+        "usuarios_activos_mensuales": {
+          "delta_absoluto": 30800.0,
+          "delta_pct": 8.0,
+          "direccion": "↑"
+        },
+        "cac_usd": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        },
+        "churn_mensual_pct": {
+          "delta_absoluto": 0.0,
+          "delta_pct": 0.0,
+          "direccion": "→"
+        }
+      },
+      "recomendacion": "La expansión impacta negativamente el EBITDA en los primeros 12 meses. Asegurarse de tener runway de 18+ meses antes de ejecutar.",
+      "timestamp": "2026-06-02T22:04:10.274142"
+    }
+  ]
+}

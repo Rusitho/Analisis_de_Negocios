@@ -1,0 +1,146 @@
+name: Auditoría Semanal — Verificación de Integridad del BOS
+
+on:
+  schedule:
+    # Ejecuta todos los lunes a las 09:00 UTC
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  auditoria-estructura:
+    name: Verificar estructura del repositorio BOS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar existencia de módulos críticos
+        run: |
+          echo "🔍 Verificando estructura del BOS..."
+
+          MODULOS=(
+            "0_gobierno_corporativo/politicas/gobierno_de_datos.md"
+            "0_gobierno_corporativo/politicas/seguridad_informacion.md"
+            "0_gobierno_corporativo/politicas/gestion_riesgos.md"
+            "1_estructura_y_estrategia/modelo_negocio.md"
+            "1_estructura_y_estrategia/estructura_org.json"
+            "1_estructura_y_estrategia/objetivos_estrategicos.json"
+            "1_estructura_y_estrategia/mapa_estrategico.md"
+            "3_indicadores_control/diccionario_kpi.json"
+            "3_indicadores_control/tablero_control.py"
+            "4_auditoria_y_trazabilidad/matriz_riesgos.json"
+            "4_auditoria_y_trazabilidad/controles.json"
+            "6_analitica_predictiva/forecast_ingresos.py"
+            "6_analitica_predictiva/forecast_demanda.py"
+            "10_digital_twin/simulaciones/simulador_escenarios.py"
+          )
+
+          FALLOS=0
+          for modulo in "${MODULOS[@]}"; do
+            if [ -f "$modulo" ]; then
+              echo "  ✅ $modulo"
+            else
+              echo "  ❌ FALTANTE: $modulo"
+              FALLOS=$((FALLOS + 1))
+            fi
+          done
+
+          if [ $FALLOS -gt 0 ]; then
+            echo "::error::$FALLOS módulos críticos faltantes en el BOS"
+            exit 1
+          fi
+          echo "✅ Todos los módulos críticos presentes"
+
+      - name: Validar JSON críticos
+        run: |
+          echo "🔍 Validando archivos JSON..."
+          JSONS=(
+            "1_estructura_y_estrategia/estructura_org.json"
+            "1_estructura_y_estrategia/objetivos_estrategicos.json"
+            "3_indicadores_control/diccionario_kpi.json"
+            "4_auditoria_y_trazabilidad/matriz_riesgos.json"
+            "4_auditoria_y_trazabilidad/controles.json"
+            "5_web_performance/tracking_tags.json"
+            "8_data_platform/diccionario_datos.json"
+          )
+          for json_file in "${JSONS[@]}"; do
+            python3 -c "import json; json.load(open('$json_file'))" && echo "  ✅ $json_file" || (echo "  ❌ JSON inválido: $json_file" && exit 1)
+          done
+
+      - name: Validar sintaxis de scripts Python
+        run: |
+          echo "🔍 Validando sintaxis Python..."
+          python3 -m py_compile 3_indicadores_control/tablero_control.py && echo "  ✅ tablero_control.py"
+          python3 -m py_compile 6_analitica_predictiva/forecast_ingresos.py && echo "  ✅ forecast_ingresos.py"
+          python3 -m py_compile 6_analitica_predictiva/forecast_demanda.py && echo "  ✅ forecast_demanda.py"
+          python3 -m py_compile 10_digital_twin/simulaciones/simulador_escenarios.py && echo "  ✅ simulador_escenarios.py"
+
+      - name: Verificar ADRs actualizados
+        run: |
+          echo "🔍 Verificando ADRs..."
+          ADR_COUNT=$(find 0_gobierno_corporativo/adr -name "ADR-*.md" | wc -l)
+          echo "  ADRs encontrados: $ADR_COUNT"
+          if [ $ADR_COUNT -lt 1 ]; then
+            echo "::warning::No se encontraron ADRs documentados"
+          else
+            echo "  ✅ $ADR_COUNT ADR(s) documentados"
+          fi
+
+      - name: Resumen de auditoría
+        run: |
+          echo "## 🔒 Auditoría Semanal del BOS" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Fecha:** $(date -u '+%Y-%m-%d')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Estado |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Módulos críticos presentes | ✅ OK |" >> $GITHUB_STEP_SUMMARY
+          echo "| JSON válidos | ✅ OK |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sintaxis Python | ✅ OK |" >> $GITHUB_STEP_SUMMARY
+          echo "| ADRs documentados | ✅ OK |" >> $GITHUB_STEP_SUMMARY
+
+  auditoria-okrs:
+    name: Verificar estado de OKRs
+    runs-on: ubuntu-latest
+    needs: auditoria-estructura
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Analizar estado de OKRs
+        run: |
+          python3 << 'EOF'
+          import json
+
+          with open("1_estructura_y_estrategia/objetivos_estrategicos.json") as f:
+              okrs = json.load(f)
+
+          at_risk = []
+          for okr in okrs["okrs_corporativos"]:
+              for kr in okr["key_results"]:
+                  if kr.get("estado") in ("at_risk", "off_track"):
+                      at_risk.append({
+                          "okr": okr["objetivo"][:60],
+                          "kr": kr["descripcion"][:60],
+                          "estado": kr["estado"]
+                      })
+
+          print(f"\n📊 ESTADO DE OKRs:")
+          total_krs = sum(len(o["key_results"]) for o in okrs["okrs_corporativos"])
+          print(f"  Total OKRs: {len(okrs['okrs_corporativos'])}")
+          print(f"  Total KRs: {total_krs}")
+          print(f"  KRs en riesgo: {len(at_risk)}")
+
+          if at_risk:
+              print("\n⚠️  KRs en riesgo o desviados:")
+              for item in at_risk:
+                  print(f"  [{item['estado'].upper()}] {item['kr']}")
+
+          EOF

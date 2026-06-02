@@ -1,0 +1,293 @@
+{
+  "organizacion": {
+    "nombre": "MobilidadPlus S.A.",
+    "sector": "Operador de Movilidad Urbana",
+    "fecha_actualizacion": "2026-06-02",
+    "version": "1.0",
+    "estructura": {
+      "directorio": {
+        "id": "DIR",
+        "nombre": "Directorio / Junta de Accionistas",
+        "nivel": 0,
+        "descripcion": "Máximo órgano de gobierno corporativo",
+        "funciones": [
+          "Definir estrategia de largo plazo",
+          "Aprobar presupuesto anual",
+          "Supervisar al CEO",
+          "Velar por los intereses de los accionistas",
+          "Aprobar inversiones mayores"
+        ],
+        "frecuencia_reunion": "Trimestral",
+        "miembros": [
+          { "rol": "Presidente del Directorio", "tipo": "Independiente" },
+          { "rol": "Directores Independientes", "cantidad": 3, "tipo": "Independiente" },
+          { "rol": "Directores Representantes de Accionistas", "cantidad": 2, "tipo": "Ejecutivo" }
+        ]
+      },
+      "gerencia_general": {
+        "id": "CEO",
+        "nombre": "Gerencia General",
+        "titulo": "Chief Executive Officer (CEO)",
+        "nivel": 1,
+        "reporta_a": "DIR",
+        "kpis_supervisados": ["revenue_total", "ebitda_pct", "nps", "employee_engagement"],
+        "responsabilidades": [
+          "Ejecutar la estrategia aprobada por el Directorio",
+          "Liderar el equipo ejecutivo (C-suite)",
+          "Representar a la empresa ante stakeholders",
+          "Garantizar la cultura organizacional",
+          "Asegurar el cumplimiento de OKRs corporativos"
+        ],
+        "headcount_directo": 8
+      },
+      "areas": [
+        {
+          "id": "CFO",
+          "nombre": "Gerencia de Finanzas",
+          "titulo": "Chief Financial Officer (CFO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["ebitda", "flujo_caja", "cac", "ltv", "roi", "margen_bruto"],
+          "subunidades": [
+            {
+              "nombre": "Contabilidad y Reporting",
+              "headcount": 4,
+              "funciones": ["Estados financieros", "Reporting regulatorio", "Cierre mensual"]
+            },
+            {
+              "nombre": "Tesorería y Control",
+              "headcount": 3,
+              "funciones": ["Gestión de liquidez", "Pagos", "Cobros", "Forex"]
+            },
+            {
+              "nombre": "FP&A (Financial Planning & Analysis)",
+              "headcount": 3,
+              "funciones": ["Presupuestación", "Forecast financiero", "Business cases"]
+            },
+            {
+              "nombre": "Auditoría Interna",
+              "headcount": 2,
+              "funciones": ["Auditorías de proceso", "Control interno", "Cumplimiento"]
+            }
+          ],
+          "headcount_total": 13
+        },
+        {
+          "id": "COO",
+          "nombre": "Gerencia de Operaciones",
+          "titulo": "Chief Operating Officer (COO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["sla_cumplimiento", "uptime_flota", "costo_por_viaje", "incidentes_operativos"],
+          "subunidades": [
+            {
+              "nombre": "Operaciones de Flota",
+              "headcount": 25,
+              "funciones": ["Despacho", "Monitoreo en tiempo real", "Gestión de conductores"]
+            },
+            {
+              "nombre": "Mantenimiento",
+              "headcount": 15,
+              "funciones": ["Mantenimiento preventivo", "Correctivo", "Gestión de taller"]
+            },
+            {
+              "nombre": "Logística y Abastecimiento",
+              "headcount": 6,
+              "funciones": ["Compras", "Proveedores", "Inventario de repuestos"]
+            },
+            {
+              "nombre": "Calidad y Procesos",
+              "headcount": 4,
+              "funciones": ["BPMN", "Mejora continua", "ISO 9001", "SLAs"]
+            }
+          ],
+          "headcount_total": 50
+        },
+        {
+          "id": "CMO",
+          "nombre": "Gerencia Comercial y Marketing",
+          "titulo": "Chief Marketing Officer (CMO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["leads_generados", "tasa_conversion", "cac", "revenue_nuevo", "nps"],
+          "subunidades": [
+            {
+              "nombre": "Marketing Digital",
+              "headcount": 5,
+              "funciones": ["SEO/SEM", "Redes sociales", "Email marketing", "Content"]
+            },
+            {
+              "nombre": "Ventas Corporativas",
+              "headcount": 6,
+              "funciones": ["Venta B2B", "Licitaciones", "Gestión de cuentas"]
+            },
+            {
+              "nombre": "CRM y Retención",
+              "headcount": 4,
+              "funciones": ["Loyalty program", "Retención", "Upselling", "CRM"]
+            },
+            {
+              "nombre": "Marca y Comunicaciones",
+              "headcount": 3,
+              "funciones": ["Identidad de marca", "PR", "Comunicación interna"]
+            }
+          ],
+          "headcount_total": 18
+        },
+        {
+          "id": "CTO",
+          "nombre": "Gerencia de Tecnología",
+          "titulo": "Chief Technology Officer (CTO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["uptime_plataforma", "mttr", "deployment_frequency", "tech_debt_ratio"],
+          "subunidades": [
+            {
+              "nombre": "Desarrollo de Software",
+              "headcount": 12,
+              "funciones": ["App móvil", "Backend", "APIs", "Web"]
+            },
+            {
+              "nombre": "Infraestructura y DevOps",
+              "headcount": 6,
+              "funciones": ["Cloud", "CI/CD", "Seguridad infraestructura", "Monitoreo"]
+            },
+            {
+              "nombre": "Arquitectura y Seguridad",
+              "headcount": 4,
+              "funciones": ["Diseño de sistemas", "Ciberseguridad", "ADRs", "Revisión técnica"]
+            },
+            {
+              "nombre": "Soporte IT",
+              "headcount": 5,
+              "funciones": ["Help desk", "Gestión de equipos", "ERP", "Licencias"]
+            }
+          ],
+          "headcount_total": 27
+        },
+        {
+          "id": "CDO",
+          "nombre": "Gerencia de Datos e Inteligencia",
+          "titulo": "Chief Data Officer (CDO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["data_quality_score", "pipeline_uptime", "dashboards_activos", "modelos_ml_produccion"],
+          "subunidades": [
+            {
+              "nombre": "Data Engineering",
+              "headcount": 5,
+              "funciones": ["Pipelines ETL/ELT", "Data Lakehouse", "Integración de fuentes"]
+            },
+            {
+              "nombre": "Data Analytics y BI",
+              "headcount": 5,
+              "funciones": ["Dashboards", "KPIs", "Reportes ejecutivos", "Ad-hoc"]
+            },
+            {
+              "nombre": "Data Science y ML",
+              "headcount": 4,
+              "funciones": ["Modelos predictivos", "Forecasting", "Optimización", "AI"]
+            },
+            {
+              "nombre": "Gobierno del Dato",
+              "headcount": 2,
+              "funciones": ["Catálogo de datos", "Diccionario", "Calidad", "Linaje"]
+            }
+          ],
+          "headcount_total": 16
+        },
+        {
+          "id": "CRO",
+          "nombre": "Gerencia de Riesgos y Cumplimiento",
+          "titulo": "Chief Risk Officer (CRO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["riesgos_criticos_abiertos", "kri_en_rojo", "dias_cierre_auditoria", "cumplimiento_regulatorio_pct"],
+          "subunidades": [
+            {
+              "nombre": "Gestión de Riesgos",
+              "headcount": 3,
+              "funciones": ["Identificación", "Evaluación", "Monitoreo de riesgos"]
+            },
+            {
+              "nombre": "Cumplimiento y Regulatorio",
+              "headcount": 2,
+              "funciones": ["Licencias", "Normativa", "Reguladores", "Contratos"]
+            },
+            {
+              "nombre": "Seguridad de la Información",
+              "headcount": 3,
+              "funciones": ["CISO función", "Ciberseguridad", "ISO 27001"]
+            }
+          ],
+          "headcount_total": 8
+        },
+        {
+          "id": "CHRO",
+          "nombre": "Gerencia de Personas y Cultura",
+          "titulo": "Chief Human Resources Officer (CHRO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["rotacion_voluntaria", "engagement_score", "time_to_hire", "training_hours_per_employee"],
+          "subunidades": [
+            {
+              "nombre": "Talent Acquisition",
+              "headcount": 3,
+              "funciones": ["Reclutamiento", "Selección", "Onboarding"]
+            },
+            {
+              "nombre": "Desarrollo y Capacitación",
+              "headcount": 3,
+              "funciones": ["Learning & Development", "Planes de carrera", "Performance"]
+            },
+            {
+              "nombre": "Compensaciones y Bienestar",
+              "headcount": 3,
+              "funciones": ["Payroll", "Beneficios", "Clima laboral", "Bienestar"]
+            }
+          ],
+          "headcount_total": 10
+        },
+        {
+          "id": "CCO",
+          "nombre": "Gerencia de Experiencia del Cliente",
+          "titulo": "Chief Customer Officer (CCO)",
+          "nivel": 2,
+          "reporta_a": "CEO",
+          "kpis_propios": ["nps", "csat", "churn_rate", "tiempo_resolucion_incidentes", "first_contact_resolution"],
+          "subunidades": [
+            {
+              "nombre": "Atención al Cliente",
+              "headcount": 20,
+              "funciones": ["Contact center", "Chat", "Email", "Escaladas"]
+            },
+            {
+              "nombre": "Customer Success",
+              "headcount": 6,
+              "funciones": ["Cuentas corporativas", "Onboarding clientes", "Retención"]
+            },
+            {
+              "nombre": "Experiencia y UX",
+              "headcount": 4,
+              "funciones": ["Research de usuarios", "UX/UI App", "Journey mapping"]
+            }
+          ],
+          "headcount_total": 30
+        }
+      ]
+    },
+    "resumen_headcount": {
+      "directorio": 5,
+      "ceo_staff": 1,
+      "finanzas": 13,
+      "operaciones": 50,
+      "comercial_marketing": 18,
+      "tecnologia": 27,
+      "datos_inteligencia": 16,
+      "riesgos_cumplimiento": 8,
+      "personas_cultura": 10,
+      "experiencia_cliente": 30,
+      "total": 178
+    }
+  }
+}

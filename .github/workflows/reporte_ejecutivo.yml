@@ -1,0 +1,121 @@
+name: Reporte Ejecutivo Mensual
+
+on:
+  schedule:
+    # Primer día de cada mes a las 07:00 UTC
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+    inputs:
+      mes:
+        description: "Mes a reportar (YYYY-MM)"
+        required: false
+        default: ""
+
+jobs:
+  generar-reporte:
+    name: Generar reporte ejecutivo mensual
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ejecutar tablero de KPIs
+        run: python 3_indicadores_control/tablero_control.py
+
+      - name: Ejecutar forecast actualizado
+        run: python 6_analitica_predictiva/forecast_ingresos.py
+
+      - name: Generar reporte ejecutivo en Markdown
+        run: |
+          python3 << 'EOF'
+          import json, os
+          from datetime import datetime
+          from pathlib import Path
+
+          fecha = datetime.now().strftime("%Y-%m")
+          mes_nombre = datetime.now().strftime("%B %Y")
+
+          # Leer OKRs
+          with open("1_estructura_y_estrategia/objetivos_estrategicos.json") as f:
+              okrs_data = json.load(f)
+
+          # Leer riesgos
+          with open("4_auditoria_y_trazabilidad/matriz_riesgos.json") as f:
+              riesgos = json.load(f)
+
+          reporte = f"""# Reporte Ejecutivo Mensual — {mes_nombre}
+
+          **Generado automáticamente:** {datetime.now().isoformat()}
+          **Fuente:** Business Operating System (BOS) v1.0
+
+          ---
+
+          ## Resumen Ejecutivo
+
+          Este reporte es generado automáticamente por el BOS como parte del ciclo de gobierno corporativo mensual.
+
+          ---
+
+          ## Estado de OKRs
+
+          | OKR | Propietario | KRs on-track | KRs at-risk |
+          |---|---|---|---|
+          """
+
+          for okr in okrs_data["okrs_corporativos"]:
+              on_track = sum(1 for kr in okr["key_results"] if kr.get("estado") == "on_track")
+              at_risk = sum(1 for kr in okr["key_results"] if kr.get("estado") in ("at_risk", "off_track"))
+              reporte += f"| {okr['objetivo'][:50]}... | {okr['propietario']} | {on_track} | {at_risk} |\n"
+
+          reporte += f"""
+          ---
+
+          ## Estado de Riesgos
+
+          | Nivel | Cantidad |
+          |---|---|
+          | Crítico | {riesgos['resumen']['por_nivel']['critico']} |
+          | Alto | {riesgos['resumen']['por_nivel']['alto']} |
+          | Medio | {riesgos['resumen']['por_nivel']['medio']} |
+          | Bajo | {riesgos['resumen']['por_nivel']['bajo']} |
+
+          ---
+
+          ## Próximos pasos
+
+          - Comité Estratégico mensual: revisar KPIs y OKRs en detalle
+          - Responsables de KRs at-risk deben presentar plan de recuperación
+          - CRO revisa riesgos altos con plan de mitigación
+
+          ---
+
+          *Este reporte es generado automáticamente. Ver los archivos fuente en el repositorio para el detalle completo.*
+          """
+
+          output_path = Path("4_auditoria_y_trazabilidad") / f"reporte_ejecutivo_{fecha}.md"
+          with open(output_path, "w", encoding="utf-8") as f:
+              f.write(reporte)
+          print(f"✅ Reporte generado: {output_path}")
+
+          EOF
+
+      - name: Subir reporte como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-ejecutivo-${{ github.run_id }}
+          path: "4_auditoria_y_trazabilidad/reporte_ejecutivo_*.md"
+          retention-days: 365
+
+      - name: Resumen del workflow
+        run: |
+          echo "## 📋 Reporte Ejecutivo Mensual Generado" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "El reporte ejecutivo del mes ha sido generado y está disponible como artefacto." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Fecha:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY

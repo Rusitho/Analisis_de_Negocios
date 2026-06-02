@@ -1,0 +1,61 @@
+name: KPIs Diarios — Tablero de Control
+
+on:
+  schedule:
+    # Ejecuta todos los días a las 08:00 UTC-5 (13:00 UTC)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      force_alert:
+        description: "Forzar envío de alertas aunque no haya desviaciones"
+        required: false
+        default: "false"
+
+jobs:
+  ejecutar-tablero-kpis:
+    name: Calcular KPIs y generar semáforos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ejecutar tablero de control
+        run: python 3_indicadores_control/tablero_control.py
+
+      - name: Ejecutar forecast de ingresos
+        run: python 6_analitica_predictiva/forecast_ingresos.py
+
+      - name: Ejecutar forecast de demanda
+        run: python 6_analitica_predictiva/forecast_demanda.py
+
+      - name: Ejecutar simulador Digital Twin
+        run: python 10_digital_twin/simulaciones/simulador_escenarios.py
+
+      - name: Subir artefactos generados
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-kpis-${{ github.run_id }}
+          path: |
+            3_indicadores_control/data/
+            6_analitica_predictiva/datasets/
+            10_digital_twin/escenarios/
+          retention-days: 30
+
+      - name: Resumen del workflow
+        run: |
+          echo "## 📊 BOS — Ejecución Diaria Completada" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Módulo | Estado |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Tablero de Control KPIs | ✅ Ejecutado |" >> $GITHUB_STEP_SUMMARY
+          echo "| Forecast de Ingresos | ✅ Ejecutado |" >> $GITHUB_STEP_SUMMARY
+          echo "| Forecast de Demanda | ✅ Ejecutado |" >> $GITHUB_STEP_SUMMARY
+          echo "| Digital Twin Scenarios | ✅ Ejecutado |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Fecha de ejecución:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
